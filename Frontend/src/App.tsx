@@ -7,7 +7,7 @@ import Teacher from './Pages/Teacher/Teacher';
 import Landing from './Pages/Landing/Landing';
 import Nabvar from './Pages/Nabvar/Nabvar';
 // & COMPONENTS
-import Loading from './Components/Loading/Loading';
+// import Loading from './Components/Loading/Loading';
 
 function App() {
   const router = createBrowserRouter([
