@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://DuvanRozoP.github.io/Cbtic/dist",
+  "homepage": "https://DuvanRozoP.github.io/Cbtic",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
