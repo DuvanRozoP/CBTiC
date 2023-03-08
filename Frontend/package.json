@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://DuvanRozoP.github.io/Cbtic/dist",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -30,6 +31,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "gh-pages": "^5.0.0",
     "prettier": "^2.8.4",
     "typescript": "^4.9.5",
     "vite": "^4.1.0"

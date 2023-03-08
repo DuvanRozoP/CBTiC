@@ -1,0 +1,20 @@
+.CardsSubjets {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.CardsSubjets h1 {
+  font-family: Poppins-Regular;
+  font-size: 20px;
+}
+
+.CardsSubjets .mapSubjets {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
