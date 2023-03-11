@@ -3,11 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://DuvanRozoP.github.io/Cbtic/dist",
+  "homepage": "https://DuvanRozoP.github.io/Cbtic",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "eslint-config-airbnb-typescript": "^17.0.0",
