@@ -14,11 +14,13 @@ interface PropsCardsSubjets {
 function CardsSubjets({ Titulo, subjets }: PropsCardsSubjets) {
   return (
     <section className='CardsSubjets'>
-      <h1>{Titulo}</h1>
-      <section className='mapSubjets'>
-        {subjets.map((subjet) => (
-          <CardSubjets description={subjet.description} />
-        ))}
+      <section className='TextCenter'>
+        <h1>{Titulo}</h1>
+        <section className='mapSubjets'>
+          {subjets.map((subjet) => (
+            <CardSubjets description={subjet.description} />
+          ))}
+        </section>
       </section>
     </section>
   );

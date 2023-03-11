@@ -1,7 +1,7 @@
 import './Landing.css';
 
 import imagen from '../../assets/Presentation/unimetaVector.png';
-import logo from '../../assets/Presentation/Logo CBTic 1.png';
+import logo from '../../assets/Presentation/Logo CBTic 1.svg';
 
 function Landing() {
   return (

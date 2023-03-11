@@ -12,27 +12,6 @@ const subjetsCalculo = [
   {
     description: 'Calculo III',
   },
-  {
-    description: 'Calculo IV',
-  },
-  {
-    description: 'Calculo II',
-  },
-  {
-    description: 'Calculo III',
-  },
-  {
-    description: 'Calculo IV',
-  },
-  {
-    description: 'Calculo II',
-  },
-  {
-    description: 'Calculo III',
-  },
-  {
-    description: 'Calculo IV',
-  },
 ];
 const subjetsFisica = [
   {
@@ -44,34 +23,13 @@ const subjetsFisica = [
   {
   description: 'Fisica III',
   },
-  {
-  description: 'Fisica IV',
-  },
-  {
-  description: 'Fisica II',
-  },
-  {
-  description: 'Fisica III',
-  },
-  {
-  description: 'Fisica IV',
-  },
-  {
-  description: 'Fisica II',
-  },
-  {
-  description: 'Fisica III',
-  },
-  {
-  description: 'Fisica IV',
-  },
   ];
 
 function Teacher() {
   return (
     <section className='containerBook'>
       <section className='searchBax'>
-        <h1>Departamento de Ciencias Basicas</h1>
+        <h1>Asignaturas</h1>
         <div>
           <input type='text' placeholder='Materia que desea buscar' />
           <button>x</button>
@@ -80,7 +38,7 @@ function Teacher() {
       <hr />
       <section className='subjets'>
         <CardsSubjets Titulo='CALCULO' subjets={subjetsCalculo} />
-        <CardsSubjets Titulo='FiSICA' subjets={subjetsFisica} />
+        <CardsSubjets Titulo='FISICA' subjets={subjetsFisica} />
       </section>
     </section>
   );
