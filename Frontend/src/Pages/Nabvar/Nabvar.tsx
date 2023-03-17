@@ -68,7 +68,7 @@ const iconsNavbar = [
       </svg>
 
     ),
-  }
+  },
 ];
 
 function Nabvar() {
