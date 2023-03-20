@@ -1,5 +1,5 @@
 import './Login.css';
-
+import AppCarousel from '../../Components/Carousel/Carousel';
 function Login() {
   return (
     <section className='ContainerLogin'>
@@ -10,14 +10,14 @@ function Login() {
           <input type='email' placeholder='Ingrese el usuario'/>
           <h2>Contraseña:</h2>
           <input type='password' placeholder='Ingrese la contraseña'/>
-          <h4>
+          <p>
             Haz Olvidado tu contraseña?, Haz click <a href=''>aqui</a>
-          </h4>
-          <button>Login</button>
+          </p>
+          <button className='BtnLogin'>Login</button>
         </section>
       </section>
       <section>
-        <h1>carousel</h1>
+      <AppCarousel />
       </section>
     </section>
   );
