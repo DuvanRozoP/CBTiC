@@ -1,7 +1,7 @@
 export function isEmpty(...arg: string[]) {
   arg.forEach((element) => {
     if (!element.length)
-      throw new Error(`400-El campo ${element} no es valido`);
+      throw new Error(`400-El campo ${element} esta vacio`);
   });
 }
 
