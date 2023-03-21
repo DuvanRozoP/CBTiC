@@ -1,49 +1,83 @@
-import AuthSchema from './Auth.model';
-
 import dotenv from 'dotenv';
+import jwt from 'jsonwebtoken';
+import { ModelAuthSchema, IAuth, AuthenticationClass } from './Auth.model';
+import { HeaderSuccess, IUser } from '../../Helpers/response';
 
 dotenv.config();
-
-interface dataType {
-  User: string;
-  Password: string;
-}
-
-// * TOKEN
-import jwt from 'jsonwebtoken';
 // ~ ENV
 const secrect = process.env.SECRET_KEY;
 
-// * ENCARGADA DE AGREGAR Y LOGEAR AL USUARIO
-export async function addUser({ User, Password }: dataType) {
-  // VALIDO QUE LA PALABRA CLAVE EXISTA O DE LO CONTRARIO FINALICE TODA LA PETICION
-  if (secrect === undefined) throw new Error('500-Error con la bases de datos');
+// * ENCARGADA DE REGISTRAR
+export async function signup(userData: AuthenticationClass) {
+  try {
+    // VALIDO QUE LA PALABRA CLAVE EXISTA O DE LO CONTRARIO FINALICE TODA LA PETICION
+    if (secrect === undefined)
+      throw new Error('500-Error con la bases de datos');
 
-  // BUSCO EN LA BASE DE DATOS SI EXISTE YA EL USUARIO
-  const exists: dataType[] | [] = await AuthSchema.find({ User });
+    const { user, password } = userData.getUserAuth();
 
-  if (!exists.length) {
-    // REGISTRO EL TOKEN CON LA CUENTA
-    const token = jwt.sign({ User, Password }, secrect);
+    // BUSCO EN LA BASE DE DATOS SI EXISTE YA EL USUARIO
+    const exists = await ModelAuthSchema.findOne({ user });
 
-    // CREO EL MODELO PARA INGRESAR A LA BASE DE DATOS
-    const dataBase = { User, Password, Token: token };
+    if (exists?.user === user) throw new Error('400-Usuario ya existe');
 
-    // HAGO LA INTANCIA CON EL SCHEMA
-    const newUser = new AuthSchema(dataBase);
+    const newUser: IAuth = new ModelAuthSchema({ user, password });
+    const token = jwt.sign({ id: newUser.id }, secrect, {
+      expiresIn: 60 * 60 * 6,
+    });
+    newUser.password = await newUser.encryptPassword(newUser.password);
 
-    // HAGO LA CREACION DEL NUEVO REGISTRO
     await newUser.save();
-
-    // DEVUELVO UN MENSAJE SASTIFACTORIO
-    return 'Registrado Correctamente';
+    const response: HeaderSuccess = {
+      status: 200,
+      header: 'auth-token',
+      token,
+      messageSuccess: 'Registrado correctamente',
+    };
+    return response;
+  } catch (error: any) {
+    throw new Error(error.message);
   }
-
-  // SI ENCONTRO UN USUARIO Y CONCIDE LA CONTRASENA
-  const userExists = exists[0];
-  if (userExists.User === User && userExists.Password !== Password)
-    throw new Error('401-contraseña Incorrecta');
-
-  return 'Logeado correctamente';
 }
 
+// * ENCARGADA DE LOGEAR
+export async function signin(userData: AuthenticationClass) {
+  try {
+    if (secrect === undefined)
+      throw new Error('500-Error con la bases de datos');
+
+    const { user, password } = userData.getUserAuth();
+    const exists = await ModelAuthSchema.findOne({ user });
+    if (!exists) throw new Error('400-Usuario no existe');
+
+    const passwordCorrect: boolean = await exists.validatePassword(password);
+    if (!passwordCorrect) throw new Error('400-Contrasena incorrecta');
+
+    const token = jwt.sign({ id: exists.id }, secrect, {
+      expiresIn: 60 * 60 * 6,
+    });
+
+    const response: HeaderSuccess = {
+      status: 200,
+      header: 'auth-token',
+      token,
+      messageSuccess: 'Logeado correctamente',
+    };
+    return response;
+  } catch (error: any) {
+    throw new Error(error.message);
+  }
+}
+
+// * ENCARGADA DE DEVOLVER USUARIOS
+export async function getAllUser(userId: string) {
+  try {
+    const exists = await ModelAuthSchema.findById(userId);
+    if (!exists) throw new Error('400-usuario denegado');
+
+    const allUser = (await ModelAuthSchema.find()) as IUser[];
+    return allUser;
+  } catch (error: any) {
+    throw new Error(error.message);
+  }
+}
