@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
+import morgan from 'morgan';
 
 // * DataBase.ts and Router.ts / imports
 import conexion from './DataBase';
@@ -19,6 +20,9 @@ conexion(
   `mongodb+srv://${user}:${key}@cluster0.hp7r31t.mongodb.net/?retryWrites=true&w=majority`
 );
 
+// * Middlewares
+app.use(morgan('dev'));
+
 // * RULES OF CORS
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -28,5 +32,5 @@ router(app);
 
 // * STARTED SERVER
 app.listen(port, () => {
-  console.log('started in ' + port);
+  console.log(`started in ${port}`);
 });
