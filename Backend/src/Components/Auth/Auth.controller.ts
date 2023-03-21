@@ -1,29 +1,63 @@
 // * STORE
-import { addUser } from './Auth.store';
+import { signup, signin, getAllUser } from './Auth.store';
 
 // * HELPERS
-import { isEmpty, isvalidate } from '../../Helpers/validate';
+import { AuthenticationClass } from './Auth.model';
 
-export async function Login(user: string, password: string) {
+interface signupControllerType {
+  user: string;
+  password: string;
+  confirmPassword: string;
+}
+
+interface signinControllerType {
+  user: string;
+  password: string;
+}
+
+export async function signupController({
+  user,
+  password,
+  confirmPassword,
+}: signupControllerType) {
   try {
-    isEmpty(user, password);
-    isvalidate(
-      [user],
-      /^[a-zA-Z0-9._%+-]+@gmail.com$/,
-      'Debe ser un Correo de Gmail'
-    );
-    isvalidate(
-      [password],
-      /^(?=.*[A-Z])(?=.*\d).+$/,
-      'Debe cumplir con los requisitos: tenga al menos una letra mayúscula y un número.'
+    const controllerUser = new AuthenticationClass(
+      user,
+      password,
+      confirmPassword
     );
 
-    const data = {
-      User: user,
-      Password: password,
-    };
+    // * VALIDANDO DATOS
+    controllerUser.validate();
 
-    return addUser(data);
+    // * ENVIANDO DATOS PARA AGREGAR
+    return signup(controllerUser);
+  } catch (error: any) {
+    throw new Error(error.message);
+  }
+}
+
+export async function signinController({
+  user,
+  password,
+}: signinControllerType) {
+  try {
+    const controllerUser = new AuthenticationClass(user, password, '');
+
+    // * VALIDANDO DATOS
+    controllerUser.validate();
+
+    // * ENVIANDO DATOS PARA LOGEAR
+    return signin(controllerUser);
+  } catch (error: any) {
+    throw new Error(error.message);
+  }
+}
+
+export async function getUserController(userId: string) {
+  try {
+    if (!userId) throw new Error('400-Usuario Denegado');
+    return getAllUser(userId);
   } catch (error: any) {
     throw new Error(error.message);
   }
