@@ -14,6 +14,9 @@ function AboutSubjets() {
         versión más, estamos ante una nueva herramienta para realizar nuestros
         proyectos de una forma más rápida y sencilla.
       </p>
+      <br /> 
+      {/* Temporal */}
+      <h1>Temas</h1>
     </section>
   );
 }
@@ -71,8 +74,9 @@ function DetailSubjets() {
       </section>
       <section className='detailDescription'>
         <div className='miniNavbar'>
-          <button onClick={() => setMenu(true)}>Description:</button>
-          <button onClick={() => setMenu(false)}>Autor</button>
+          <button onClick={() => setMenu(true)}>Descripcion</button>
+          <button onClick={() => setMenu(false)}>Profesores</button>
+          <button>Interacciones</button>
         </div>
         {menu ? <AboutSubjets /> : <AuthorTeacher />}
       </section>

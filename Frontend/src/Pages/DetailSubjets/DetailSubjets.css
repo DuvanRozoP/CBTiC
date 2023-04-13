@@ -9,8 +9,9 @@
 }
 
 .DetailSubject .detailPresentation {
-  background-color: rgb(18, 8, 42);
-  color: white;
+  background-image: url(../../assets/Presentation/Panel.webp);
+  color: rgb(66 54 53);
+  background-size: contain;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -63,9 +64,7 @@
 }
 
 .detailDescription .miniNavbar button:hover {
-  border-radius: 10px 10px 10px 10px;
-  background: rgb(19, 19, 19);
-  color: white;
+  border-bottom: 5px solid ;
 }
 
 /* DESCRIPTION */
