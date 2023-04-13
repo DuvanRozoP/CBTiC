@@ -1,4 +1,12 @@
+import CardsTeacher from '../../Components/CardsTeacher/CardsTeacher';
 import './Teachers.css'
+
+const Teacher = [
+  {
+    description: "Fisica",
+  }
+]
+ 
 
 function Teachers(){
     return (
@@ -11,11 +19,9 @@ function Teachers(){
           </div>
         </section>
         <hr />
-        <div className='containerInfo'>
-            <img src="" alt=""/>
-            <h1>Fidel Bautista</h1>
-            <h4>Fisico</h4>
-        </div>
+        <section className='Teachers'>
+          <CardsTeacher Titulo={'Fidel Bautista'} Teachers={Teacher}></CardsTeacher>
+        </section>
       </section>
     )
 }

@@ -1,0 +1,7 @@
+.CardTeacher {
+    display: block;
+    border: solid;
+    width: 40%;
+    height: 20%;
+    border-radius: 20px;
+}
