@@ -23,11 +23,11 @@ function App() {
           element: <Login/>
         },
         {
-          path: 'home',
+          path: 'Inicio',
           element: <Landing />,
         },
         {
-          path: 'subjects',
+          path: 'Asignaturas',
           element: <Teacher />,
         },
         {
@@ -35,8 +35,12 @@ function App() {
           element: <DetailSubjets />
         },
         {
-          path: 'teachers',
+          path: 'Profesores',
           element: <Teachers />
+        },
+        {
+          path: 'Interaciones',
+          element: <></>
         }
       ],
     },
