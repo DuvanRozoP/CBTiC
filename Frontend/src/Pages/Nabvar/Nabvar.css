@@ -41,7 +41,9 @@
   background-color: var(--color-white);
   transform: scale(1.2);
 }
-
+.containerNabvar a{
+  text-decoration: none;
+}
 .containerNabvar .closeNavbar:hover svg path {
   fill: var(--color-Red);
 }

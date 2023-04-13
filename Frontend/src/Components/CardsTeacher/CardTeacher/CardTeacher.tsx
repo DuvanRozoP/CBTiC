@@ -1,3 +1,4 @@
+import './CardTeacher.css'
 import predeterminate from '../../../assets/pretedeterminadoAsignature.webp';
 
 interface PropsCardTeacher {
@@ -9,7 +10,6 @@ function CardTeacher({ description, img = predeterminate }: PropsCardTeacher) {
     return (
       <section className='CardTeacher'>
           <img src={img} alt={description} />
-          <div>{description}</div>  
       </section>
     );
 }
