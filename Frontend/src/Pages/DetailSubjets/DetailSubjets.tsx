@@ -8,11 +8,8 @@ function AboutSubjets() {
     <section className='descriptionCurso'>
       <h1>Sobre este curso</h1>
       <p>
-        Angular es uno de los frameworks más utilizados en la actualidad para
-        hacer aplicaciones web. Nace de Angular.js y su éxito, pero cambia
-        totalmente el paradigma de desarrollo. No estamos ante una simple
-        versión más, estamos ante una nueva herramienta para realizar nuestros
-        proyectos de una forma más rápida y sencilla.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, explicabo praesentium provident non illum accusamus repellendus saepe sit maxime veritatis, molestias distinctio obcaecati nobis et mollitia totam fugiat. Vitae, laudantium.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit voluptatibus voluptas voluptatem doloremque odio dolores nesciunt aliquam minus dignissimos. Id at eligendi nostrum! Rem illo ipsa non voluptatibus qui beatae!
       </p>
       <br /> 
       {/* Temporal */}
@@ -74,8 +71,8 @@ function DetailSubjets() {
       </section>
       <section className='detailDescription'>
         <div className='miniNavbar'>
-          <button onClick={() => setMenu(true)}>Descripcion</button>
-          <button onClick={() => setMenu(false)}>Profesores</button>
+          <button onClick={() => setMenu(true)} className={`${menu ? 'Active' : 'Disabled'}`}>Descripcion</button>
+          <button  onClick={() => setMenu(false)}  >Profesores</button>
           <button>Interacciones</button>
         </div>
         {menu ? <AboutSubjets /> : <AuthorTeacher />}
