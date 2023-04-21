@@ -1,0 +1,130 @@
+.DetailSubject {
+  padding: 20px 0px 0px 50px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.DetailSubject .detailPresentation {
+  background-image: url(../../assets/Presentation/Panel.webp);
+  color: rgb(66 54 53);
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  width: 90%;
+  height: 50vh;
+  padding: 0px 60px;
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.DetailSubject .detailPresentation h1 {
+  font-size: 50px;
+  line-height: 1;
+  font-family: Poppins-Bold;
+}
+
+.DetailSubject .detailPresentation p {
+  font-family: Poppins-Regular;
+  font-size: 20px;
+}
+
+.detailDescription {
+  background-color: rgb(255, 255, 255);
+  width: 90%;
+  height: 40vh;
+}
+
+.detailDescription .miniNavbar {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  /* justify-content: space-around; */
+
+  background-color: rgb(255, 255, 255);
+}
+
+.detailDescription .miniNavbar button {
+  height: 100%;
+  outline-style: none;
+  border-style: none;
+  font-family: Poppins-Bold;
+  width: 100%;
+  background: white;
+  transition: all 200ms;
+}
+
+.detailDescription .miniNavbar button:hover {
+  border-bottom: 5px solid ;
+}
+
+/* DESCRIPTION */
+.descriptionCurso {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.descriptionCurso h1 {
+  font-family: Poppins-Bold;
+  font-size: 25px;
+}
+
+.descriptionCurso p {
+  font-family: Poppins-Regular;
+  font-size: 15px;
+}
+
+/* AUTHORTEACHER */
+.authorTeacher {
+  font-family: Poppins-Bold;
+  font-size: 25px;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.authorTeacher h1 {
+  width: 100%;
+}
+
+.cardsTeacher {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.cardTeacher {
+  font-family: Poppins-Regular;
+  font-size: 18px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 6px;
+  border-radius: 10px;
+  background-color: cornflowerblue;
+}
+
+.cardTeacher img {
+  width: 50px;
+  height: 50px;
+}

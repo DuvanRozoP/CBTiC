@@ -8,6 +8,7 @@ import Landing from './Pages/Landing/Landing';
 import Nabvar from './Pages/Nabvar/Nabvar';
 import DetailSubjets from './Pages/DetailSubjets/DetailSubjets';
 import Teachers from './Pages/Teachers/Teachers';
+import Login from './Pages/Login/Login';
 // & COMPONENTS
 // import Loading from './Components/Loading/Loading';
 
@@ -18,11 +19,15 @@ function App() {
       element: <Nabvar />,
       children: [
         {
-          path: 'home',
+          path: 'login',
+          element: <Login/>
+        },
+        {
+          path: 'Inicio',
           element: <Landing />,
         },
         {
-          path: 'subjects',
+          path: 'Asignaturas',
           element: <Teacher />,
         },
         {
@@ -30,8 +35,12 @@ function App() {
           element: <DetailSubjets />
         },
         {
-          path: 'teachers',
+          path: 'Profesores',
           element: <Teachers />
+        },
+        {
+          path: 'Interaciones',
+          element: <></>
         }
       ],
     },

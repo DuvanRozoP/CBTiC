@@ -1,0 +1,9 @@
+.CardTeacher{
+    width: 30%;
+}
+.CardTeacher img{
+    width: 100%;
+    min-width: 100px;
+    min-height: 100px;
+    border-radius: 200px;
+}

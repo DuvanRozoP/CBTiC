@@ -1,0 +1,86 @@
+.ContainerLogin{
+    display: flex;
+    padding-left: 70px;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    align-items: center;
+}
+.ContainerLogin > section:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    margin: 50px;
+    height: 80%;
+    background: #FFFFFF;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 15px;
+    justify-content: center;
+    min-width: 250px
+}
+.ContainerLogin > section:nth-child(1) > section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+.ContainerLogin > section:nth-child(2){
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 100%;
+    min-width: 250px;
+    height: 80%;
+    border-radius: 15px;
+    margin: 50px;
+}
+.ContainerLogin img{
+    width: 60%;
+    height: 20%;
+    object-fit: contain;
+}
+.ContainerLogin input{
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    height: 50px;
+    border-style: none;
+    padding-left: 20px;
+}
+.ContainerLogin input:focus{
+    outline: none;
+}
+
+.ContainerLogin input::placeholder {
+    color: #999;
+    font-size: 15px;
+}
+.BtnLogin {
+    width: 100%;
+    height: 20%;
+    background: #F31F36;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    border-style: none;
+    transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  }
+  
+  .ContainerLogin button:focus, .ContainerLogin button:active {
+    background-color: #FFFFFF;
+    color: #F31F36;
+  }
+  
+  .ContainerLogin button:hover {
+    background-color: #FFFFFF;
+    color: #F31F36;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in, color 0.2s ease-in;
+  }
+  .ContainerLogin h4 {
+    margin-top: 20px;
+  }
+
