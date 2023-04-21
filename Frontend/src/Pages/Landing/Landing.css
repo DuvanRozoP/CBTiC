@@ -29,7 +29,7 @@
   background-repeat: no-repeat;
   background-position: -30px 0px;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
 }
 
@@ -53,6 +53,7 @@
   display: flex;
   flex-direction: row;
   gap: 20px;
+  text-align: justify;
 }
 
 .containerLanding .info div:first-child {

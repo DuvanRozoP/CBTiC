@@ -12,18 +12,16 @@ function Landing() {
       </div>
       <div className='info'>
         <div>
-          <h1>mision</h1>
+          <h1>Mision</h1>
           <p>
-            Aca colocariamos severa mision si tan solo tuvieramos uno de
-            mientras le dejo este bonito mensaje.el logo aun esta en fase de
-            desarrollo
+            Nuestra misión es mejorar la calidad de la educación en el departamento de ciencias básicas mediante la creación y la implementación de una guía de estudios actualizada y bien estructurada, 
+            que permita a los estudiantes comprender y aplicar los conceptos de manera efectiva. 
           </p>
         </div>
         <div>
-          <h1>vision</h1>
+          <h1>Vision</h1>
           <p>
-            Aca tampoco tenemos vision asi que por favor solititamos ayuda para
-            poder obtener informacion
+            Aspiramos a colaborar con otros departamentos y organizaciones educativas para difundir nuestras mejores prácticas y mejorar la calidad de la educación en toda la institución.
           </p>
         </div>
       </div>
