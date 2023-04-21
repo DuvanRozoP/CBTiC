@@ -37,6 +37,10 @@ function App() {
         {
           path: 'Profesores',
           element: <Teachers />
+        },
+        {
+          path: 'Interaciones',
+          element: <></>
         }
       ],
     },

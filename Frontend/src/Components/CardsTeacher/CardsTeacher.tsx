@@ -11,13 +11,13 @@ interface PropsCardTeacher {
 }
 function CardsTeacher({ Titulo, Teachers }: PropsCardTeacher) {
   return (
-    <section className='CardTeacher'>
-      <h1>{Titulo}</h1>
-      <section className=''>
+    <section className='CardsTeacher'>
+      <section className='Cardimg'>
           {Teachers.map((Teacher, index) => (
             <CardTeacher key={index} description={Teacher.description} img={Teacher.img}/>
           ))}
-        </section>
+      </section>
+      <h1>{Titulo}</h1>
     </section>
   );
 }
