@@ -1,5 +1,10 @@
 import './Login.css';
-import AppCarousel from '../../Components/Carousel/Carousel';
+import Slider from '../../Components/Slider/Slider';
+
+const mockimgs = [
+  "https://picsum.photos/id/1024/400",
+  "https://picsum.photos/id/1020/400"
+]
 function Login() {
   return (
     <section className='ContainerLogin'>
@@ -17,7 +22,7 @@ function Login() {
         </section>
       </section>
       <section>
-      <AppCarousel />
+          <Slider imgs={mockimgs}></Slider>
       </section>
     </section>
   );

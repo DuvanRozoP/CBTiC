@@ -34,7 +34,7 @@
     border-radius: 15px;
     margin: 50px;
 }
-.ContainerLogin img{
+.ContainerLogin > section:nth-child(1) img{
     width: 60%;
     height: 20%;
     object-fit: contain;
@@ -69,12 +69,12 @@
     transition: background-color 0.2s ease-out, color 0.2s ease-out;
   }
   
-  .ContainerLogin button:focus, .ContainerLogin button:active {
+  .ContainerLogin > section:nth-child(1) button:focus, .ContainerLogin > section:nth-child(1) button:active {
     background-color: #FFFFFF;
     color: #F31F36;
   }
   
-  .ContainerLogin button:hover {
+  .ContainerLogin > section:nth-child(1) button:hover {
     background-color: #FFFFFF;
     color: #F31F36;
     cursor: pointer;
