@@ -21,6 +21,7 @@ function Teachers(){
         <hr />
         <section className='Teachers'>
           <CardsTeacher Titulo={'Fidel Bautista'} Teachers={Teacher}></CardsTeacher>
+          <CardsTeacher Titulo={'Fidel Bautista'} Teachers={Teacher}></CardsTeacher>
         </section>
       </section>
     )

@@ -95,3 +95,12 @@
     line-height: 29px;
     color: #A0A0A0;
   }
+  .Teachers{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 5%;
+    gap: 100px;
+  }
