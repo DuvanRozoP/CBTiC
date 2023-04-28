@@ -41,6 +41,7 @@ export async function signup(userData: AuthenticationClass) {
 }
 
 // * ENCARGADA DE LOGEAR
+// * ENCARGADA DE LOGEAR
 export async function signin(userData: AuthenticationClass) {
   try {
     if (secrect === undefined)
@@ -48,9 +49,13 @@ export async function signin(userData: AuthenticationClass) {
 
     const { user, password } = userData.getUserAuth();
     const userLower = user.toLowerCase();
-    const exists = await ModelAuthSchema.findOne({ user: userLower });
+    const exists = await ModelAuthSchema.findOne({ user:userLower });
+    if (!exists) throw new Error('400-Usuario no existe');
+
+    const passwordCorrect: boolean = await exists.validatePassword(password);
     if (!passwordCorrect) throw new Error('400-Contrasena incorrecta');
 
+    const token = jwt.sign({ id: exists.id }, secrect, {
       expiresIn: 60 * 60 * 6,
     });
 

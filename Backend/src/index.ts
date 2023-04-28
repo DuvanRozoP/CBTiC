@@ -25,6 +25,10 @@ app.use(morgan('dev'));
 
 // * RULES OF CORS
 app.use(cors({origin:"http://localhost:5173"}))
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// * ROUTING FOR COMPONENTS
 router(app);
 
 // * STARTED SERVER
