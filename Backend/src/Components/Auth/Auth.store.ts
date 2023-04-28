@@ -15,9 +15,9 @@ export async function signup(userData: AuthenticationClass) {
       throw new Error('500-Error con la bases de datos');
 
     const { user, password } = userData.getUserAuth();
-
+    const userLower = user.toLowerCase();
     // BUSCO EN LA BASE DE DATOS SI EXISTE YA EL USUARIO
-    const exists = await ModelAuthSchema.findOne({ user });
+    const exists = await ModelAuthSchema.findOne({ user: userLower });
 
     if (exists?.user === user) throw new Error('400-Usuario ya existe');
 
@@ -47,13 +47,10 @@ export async function signin(userData: AuthenticationClass) {
       throw new Error('500-Error con la bases de datos');
 
     const { user, password } = userData.getUserAuth();
-    const exists = await ModelAuthSchema.findOne({ user });
-    if (!exists) throw new Error('400-Usuario no existe');
-
-    const passwordCorrect: boolean = await exists.validatePassword(password);
+    const userLower = user.toLowerCase();
+    const exists = await ModelAuthSchema.findOne({ user: userLower });
     if (!passwordCorrect) throw new Error('400-Contrasena incorrecta');
 
-    const token = jwt.sign({ id: exists.id }, secrect, {
       expiresIn: 60 * 60 * 6,
     });
 
