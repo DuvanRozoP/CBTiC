@@ -61,7 +61,7 @@ export async function signin(userData: AuthenticationClass) {
 
     const response: HeaderSuccess = {
       status: 200,
-      header: 'auth-token',
+      header: 'Authorization',
       token,
       messageSuccess: 'Logeado correctamente',
     };
