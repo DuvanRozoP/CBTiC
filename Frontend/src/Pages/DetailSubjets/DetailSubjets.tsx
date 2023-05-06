@@ -8,8 +8,10 @@ function AboutSubjets() {
     <section className='descriptionCurso'>
       <h1>Sobre este curso</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, explicabo praesentium provident non illum accusamus repellendus saepe sit maxime veritatis, molestias distinctio obcaecati nobis et mollitia totam fugiat. Vitae, laudantium.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit voluptatibus voluptas voluptatem doloremque odio dolores nesciunt aliquam minus dignissimos. Id at eligendi nostrum! Rem illo ipsa non voluptatibus qui beatae!
+        Este curso cuenta con cinco capítulos: Electrostática, Corriente 
+        eléctrica continua, Campo magnético, Inducción electromagnética y Ecuaciones de Maxwell. 
+        En cada uno de estos capítulos aparecen problemas resueltos y al final de cada uno de ellos se 
+        ha dispuesto de una colección de problemas propuestos. El texto incluye un producto multimedia
       </p>
       <br /> 
       {/* Temporal */}
@@ -64,9 +66,9 @@ function DetailSubjets() {
   return (
     <section className='DetailSubject'>
       <section className='detailPresentation'>
-        <h1>Sin Asignaturas</h1>
+        <h1>Física III</h1>
         <p>
-          description de la asignatura
+           Electromagnetismo
         </p>
       </section>
       <section className='detailDescription'>

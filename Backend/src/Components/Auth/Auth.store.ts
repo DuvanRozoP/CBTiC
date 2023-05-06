@@ -58,7 +58,6 @@ export async function signin(userData: AuthenticationClass) {
     const token = jwt.sign({ id: exists.id }, secrect, {
       expiresIn: 60 * 60 * 6,
     });
-
     const response: HeaderSuccess = {
       status: 200,
       header: 'Authorization',
