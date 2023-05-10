@@ -1,7 +1,8 @@
 import './Login.css';
 import Slider from '../../Components/Slider/Slider';
-import { loginRequest } from '../../api/auth'
 import { useAuthStore } from '../../store/auth';
+import { requestAuth } from '../../api/auth';
+import axios from 'axios'
 
 const mockimgs = [
   "https://picsum.photos/id/1024/400",
@@ -16,8 +17,12 @@ function Login() {
     const email = (e.currentTarget.elements[0] as HTMLInputElement).value
     const password = (e.currentTarget.elements[1] as HTMLInputElement).value
 
-    const resLogin = await loginRequest(email, password)
-    console.log(resLogin);
+    // const resLogin = await loginRequest(email, password)
+    const request = await axios.post('http://localhost:3003/auth/signin',{
+      email: "rozoparraduvan@gmail.com",
+      password: "0123456789Kk+"
+    },{ withCredentials: true })
+    console.log(request);
     // setToken(resLogin)
   }
 
