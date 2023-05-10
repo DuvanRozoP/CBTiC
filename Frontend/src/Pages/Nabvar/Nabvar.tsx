@@ -81,34 +81,34 @@ const iconsNavbar = [
         <path
           d='M2.5 17.05C2.5 8.62 6.715 3 16.55 3H39.03C48.865 3 53.08 8.62 53.08 17.05V45.15C53.08 53.58 48.865 59.2 39.03 59.2H16.55C6.715 59.2 2.5 53.58 2.5 45.15V28.3462'
           stroke='white'
-          stroke-width='4.215'
-          stroke-miterlimit='10'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeWidth='4.215'
+          strokeMiterlimit='10'
+          strokeLinecap='round'
+          strokeLinejoin="round"
         />
         <path
           d='M34.815 10.025V15.645C34.815 18.736 37.344 21.265 40.435 21.265H46.055'
           stroke='white'
-          stroke-width='4.215'
-          stroke-miterlimit='10'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeWidth='4.215'
+          strokeMiterlimit='10'
+          strokeLinecap='round'
+          strokeLinejoin="round"
         />
         <path
           d='M16.55 33.91H27.79'
           stroke='white'
-          stroke-width='4.215'
-          stroke-miterlimit='10'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeWidth='4.215'
+          strokeMiterlimit='10'
+          strokeLinecap='round'
+          strokeLinejoin="round"
         />
         <path
           d='M16.55 45.15H39.03'
           stroke='white'
-          stroke-width='4.215'
-          stroke-miterlimit='10'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeWidth='4.215'
+          strokeMiterlimit='10'
+          strokeLinecap='round'
+          strokeLinejoin="round"
         />
       </svg>
     ),
