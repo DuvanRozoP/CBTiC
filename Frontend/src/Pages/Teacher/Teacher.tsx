@@ -4,7 +4,8 @@ import CardsSubjets from '../../Components/CardsSubjets/CardsSubjets';
 
 const subjetsCalculo = [
   {
-    description: 'Calculo I',
+    description: 'Cálculo I',
+    
   },
   {
     description: 'Calculo II',
