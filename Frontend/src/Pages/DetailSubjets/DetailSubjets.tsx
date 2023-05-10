@@ -3,22 +3,44 @@ import './DetailSubjets.css';
 
 import authorPredeterminate from '../../assets/icons/authorPredeterminate.png';
 
+const Descripcion = [
+  {
+    Info: 'Este curso cuenta con cinco capítulos: Electrostática, Corriente eléctrica continua, Campo magnético, Inducción electromagnética y Ecuaciones de Maxwell. En cada uno de estos capítulos aparecen problemas resueltos y al final de cada uno de ellos se ha dispuesto de una colección de problemas propuestos. El texto incluye un producto multimedia',
+    Temas: ['Ley de Faraday', 'Ley de Gauss'],
+  },
+];
+
 function AboutSubjets() {
   return (
     <section className='descriptionCurso'>
       <h1>Sobre este curso</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, explicabo praesentium provident non illum accusamus repellendus saepe sit maxime veritatis, molestias distinctio obcaecati nobis et mollitia totam fugiat. Vitae, laudantium.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit voluptatibus voluptas voluptatem doloremque odio dolores nesciunt aliquam minus dignissimos. Id at eligendi nostrum! Rem illo ipsa non voluptatibus qui beatae!
-      </p>
-      <br /> 
-      {/* Temporal */}
+      {Descripcion.map((element) => {
+        return <p key={element.Info}>{element.Info}</p>;
+      })}
+      <br />
       <h1>Temas</h1>
+      {Descripcion.map((element, index) => {
+        return (
+          <section key={index} className='TemasCard'>
+            {element.Temas.map((tema, indexTema) => {
+              return (
+                <div key={indexTema} className='TemaCard'>
+                  <h3>
+                    {indexTema+1} 
+                  </h3>
+                  <p>{tema}</p>
+                </div>
+              );
+            })}
+          </section>
+        );
+      })}
     </section>
   );
 }
 
-// ~ PROFESORES ACARGO DE LA ASIGNUTA
+
+// ~ PROFESORES ACARGO DE LA ASIGNATURA
 
 const Profesores = [
   {
@@ -64,15 +86,18 @@ function DetailSubjets() {
   return (
     <section className='DetailSubject'>
       <section className='detailPresentation'>
-        <h1>Sin Asignaturas</h1>
-        <p>
-          description de la asignatura
-        </p>
+        <h1>Física III</h1>
+        <p>Electromagnetismo</p>
       </section>
       <section className='detailDescription'>
         <div className='miniNavbar'>
-          <button onClick={() => setMenu(true)} className={`${menu ? 'Active' : 'Disabled'}`}>Descripcion</button>
-          <button  onClick={() => setMenu(false)}  >Profesores</button>
+          <button
+            onClick={() => setMenu(true)}
+            className={`${menu ? 'Active' : 'Disabled'}`}
+          >
+            Descripcion
+          </button>
+          <button onClick={() => setMenu(false)}>Profesores</button>
           <button>Interacciones</button>
         </div>
         {menu ? <AboutSubjets /> : <AuthorTeacher />}

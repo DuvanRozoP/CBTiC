@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: center;
   background-color: rgb(255, 255, 255);
+  overflow-y: auto;
 }
 
 .DetailSubject .detailPresentation {
@@ -22,6 +23,7 @@
   padding: 0px 60px;
   border-radius: 10px 10px 0px 0px;
   /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+  
 }
 
 .DetailSubject .detailPresentation h1 {
@@ -72,7 +74,7 @@
 /* DESCRIPTION */
 .descriptionCurso {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -129,4 +131,37 @@
 .cardTeacher img {
   width: 50px;
   height: 50px;
+}
+.TemasCard{
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.TemaCard{
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  padding: 14px;
+  min-height: 85px;
+  max-height: 85px;
+  background-color: #E2E8F0;
+  border-radius: 15px;
+  align-items: center;
+  gap: 20px;
+}
+.TemaCard h3{
+  display: flex;
+  background-color: #d6d4d4;
+  width: 4%;
+  height: 40px;
+  min-height: 40px;
+  border: 3px solid #d6d4d4;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  color: #747474;
+}
+.TemaCard p {
+  font-size: 16px;
+  font-weight: 700;
 }
