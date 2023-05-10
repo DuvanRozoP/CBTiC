@@ -1,8 +1,7 @@
 import express from 'express';
-import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
-import cors, { CorsOptions } from 'cors';
+import cors from 'cors';
 // * DataBase.ts and Router.ts / imports
 import conexion from './DataBase';
 import router from './Router';
@@ -15,10 +14,6 @@ const port = process.env.PORT;
 const key = process.env.KEY;
 const user = process.env.USER;
 
-const corsOptions: CorsOptions = {
-  origin: process.env.ORIGIN,
-  credentials: true,
-}
 // * CONNECT WITH MONGODB ATLAS
 conexion(
   `mongodb+srv://${user}:${key}@cluster0.hp7r31t.mongodb.net/?retryWrites=true&w=majority`
@@ -28,14 +23,18 @@ conexion(
 app.use(morgan('dev'));
 
 // * RULES OF CORS
-app.use(cors(corsOptions));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true
+}));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // * ROUTING FOR COMPONENTS
 router(app);
 
 // * STARTED SERVER
 app.listen(port, () => {
+  // eslint-disable-next-line no-console
   console.log(`started in ${port}`);
 });

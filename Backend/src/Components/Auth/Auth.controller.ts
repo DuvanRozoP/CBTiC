@@ -1,18 +1,17 @@
+/* eslint-disable no-console */
 // * STORE
 import { signup, signin, getAllUser } from './Auth.store';
 
 // * HELPERS
 import { AuthenticationClass } from './Auth.model';
+import type { controllerFuncHeader } from '../../Helpers/response';
+import { isEmpty, isvalidate } from '../../Helpers/validate';
+import { sinGinParams } from '../types';
 
 interface signupControllerType {
   user: string;
   password: string;
   confirmPassword: string;
-}
-
-interface signinControllerType {
-  user: string;
-  password: string;
 }
 
 export async function signupController({
@@ -37,22 +36,30 @@ export async function signupController({
   }
 }
 
-export async function signinController({
-  user,
-  password,
-}: signinControllerType) {
+export async function signinController(body: sinGinParams): Promise<controllerFuncHeader>  {
   try {
-    const controllerUser = new AuthenticationClass(user, password, '');
+    console.time('Rendimiento-Signin-Controller');
+    const {email, password} = body
 
-    // * VALIDANDO DATOS
-    controllerUser.validate();
+    isEmpty(email, password);
+    isvalidate(
+      [email],
+      /^[a-zA-Z0-9._%+-]+@gmail.com$/,
+      'Debe ser un Correo de Gmail'
+    );
+    isvalidate(
+      [password],
+      /^(?=.*[A-Z])(?=.*\d).{8,18}$/,
+      'tenga al menos una letra mayúscula y un número,maximo 18 caracteres,minimo 8 caracteres'
+    );
 
+    console.timeEnd('Rendimiento-Signin-Controller');
     // * ENVIANDO DATOS PARA LOGEAR
-    return signin(controllerUser);
+    return await signin(body);
   } catch (error: any) {
     throw new Error(error.message);
   }
-}
+} 
 
 export async function getUserController(userId: string) {
   try {
