@@ -5,27 +5,30 @@ import CardsSubjets from '../../Components/CardsSubjets/CardsSubjets';
 const subjetsCalculo = [
   {
     description: 'Cálculo I',
-    
   },
   {
-    description: 'Calculo II',
+    description: 'Cálculo II',
   },
   {
-    description: 'Calculo III',
+    description: 'Cálculo III',
   },
 ];
 const subjetsFisica = [
   {
-  description: 'Fisica I',
+  description: 'Física I',
   },
   {
-  description: 'Fisica II',
+  description: 'Física II',
   },
   {
-  description: 'Fisica III',
+  description: 'Física III',
   },
   ];
-
+const subjetsEd = [
+  {
+    description: 'Ecuaciones Diferenciales'
+  }
+]
 function Teacher() {
   return (
     <section className='containerBook'>
@@ -38,8 +41,9 @@ function Teacher() {
       </section>
       <hr />
       <section className='subjets'>
-        <CardsSubjets Titulo='CALCULO' subjets={subjetsCalculo} />
-        <CardsSubjets Titulo='FISICA' subjets={subjetsFisica} />
+        <CardsSubjets Titulo='MULTIMEDIA CÁLCULO' subjets={subjetsCalculo} />
+        <CardsSubjets Titulo='MULTIMEDIA FÍSICA' subjets={subjetsFisica} />
+        <CardsSubjets Titulo='MULTIMEDIA ECUACIONES DIFERENCIALES' subjets={subjetsEd}></CardsSubjets>
       </section>
     </section>
   );

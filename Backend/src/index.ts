@@ -1,8 +1,7 @@
 import express from 'express';
-import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
-
+import cors from 'cors';
 // * DataBase.ts and Router.ts / imports
 import conexion from './DataBase';
 import router from './Router';
@@ -24,13 +23,18 @@ conexion(
 app.use(morgan('dev'));
 
 // * RULES OF CORS
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true
+}));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // * ROUTING FOR COMPONENTS
 router(app);
 
 // * STARTED SERVER
 app.listen(port, () => {
+  // eslint-disable-next-line no-console
   console.log(`started in ${port}`);
 });

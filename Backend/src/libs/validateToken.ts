@@ -32,7 +32,7 @@ export const tokenValidation = (
   } catch (error: any) {
     if (typeof error === 'object' && error !== null && 'message' in error) {
       const errorMessage = (error as Error).message;
-      errorResponse(req, res, errorMessage.split('-'));
+      errorResponse(res, errorMessage.split('-'));
     }
   }
 };

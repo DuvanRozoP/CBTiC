@@ -9,8 +9,9 @@
 }
 
 .DetailSubject .detailPresentation {
-  background-color: rgb(18, 8, 42);
-  color: white;
+  background-image: url(../../assets/Presentation/Panel.webp);
+  color: rgb(66 54 53);
+  background-size: contain;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -20,7 +21,7 @@
   height: 50vh;
   padding: 0px 60px;
   border-radius: 10px 10px 0px 0px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 }
 
 .DetailSubject .detailPresentation h1 {
@@ -63,11 +64,11 @@
 }
 
 .detailDescription .miniNavbar button:hover {
-  border-radius: 10px 10px 10px 10px;
-  background: rgb(19, 19, 19);
-  color: white;
+  border-bottom: 5px solid ;
 }
-
+.detailDescription .miniNavbar button[class='Active'] {
+  border-bottom: 2px solid grey ;
+}
 /* DESCRIPTION */
 .descriptionCurso {
   width: 100%;
@@ -77,7 +78,7 @@
   padding: 20px;
   gap: 10px;
   border-radius: 0px 0px 10px 10px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 }
 
 .descriptionCurso h1 {
@@ -99,7 +100,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 }
 
 .authorTeacher h1 {
