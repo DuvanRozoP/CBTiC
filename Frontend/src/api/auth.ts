@@ -10,15 +10,23 @@ requestAuth.interceptors.response.use(config => {
 })
 
 export const loginRequest = async (user: string, password: string) => {
-  return axios.post('http://localhost:3003/auth/signin', {
-    user,
-    password
-  },{
-    headers:{
-     
-    }
-  });
-}
-export const userRequest =async () => {
+  try {
+    const response = await axios.post('http://localhost:3003/auth/signin', {
+      user,
+      password,
+    });
+
+    const token = response.headers['authorization'];
+    console.log(token); // para verificar que el token se ha guardado correctamente
+    axios.defaults.headers.get['Authorization'] = 'Bearer ' + token;
+    axios.defaults.headers.get['Accept'] = 'application/json';
+    return response;
+  } catch (error) {
+    const errorMessage = (error as { response: { data: string } }).response.data;
+    throw new Error(errorMessage);
+  }
+};
+
+export const userRequest = async () => {
     return await axios.get('http://localhost:3003/auth/User')
 }
