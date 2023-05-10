@@ -23,15 +23,21 @@ conexion(
 app.use(morgan('dev'));
 
 // * RULES OF CORS
-app.use(cors({
-  origin: 'http://localhost:5173',
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: 'http://localhost:5173',
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // * ROUTING FOR COMPONENTS
 router(app);
+
+// * Static
+app.use('/cv/pdf', express.static('src/public/cv'));
+app.use('/cvImg', express.static('src/public/imgCv'));
 
 // * STARTED SERVER
 app.listen(port, () => {
