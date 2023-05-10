@@ -1,0 +1,51 @@
+.ContainerSlider{
+    display: flex;
+    width: 100%;
+    position: relative;
+    max-width: 100%;
+    height: 100%;
+    flex-direction: row;
+    z-index: 1;
+}
+.slide {
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;    
+}
+.slide.active {
+    opacity: 1;
+}
+.DisableImg{
+    width: 0%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;       
+}
+.ImgStyle{
+    width: 100%;
+    height: -webkit-fill-available;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+.BtnSlide{
+    position: absolute;
+    bottom: 10%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    transform: translateY(50%); 
+}
+.Right{
+    left: 5%;;
+}
+.Left {
+    right: 5%;
+  }
+.BtnSlide img{
+    width: 70%;
+}
+.ImgContainer{
+    display: contents;
+}

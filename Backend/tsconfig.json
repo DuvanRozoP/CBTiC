@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+    "module": "commonjs" /* Specify what module code is generated. */,
+    "sourceMap": true /* Create source map files for emitted JavaScript files. */,
+    "outDir": "./build" /* Specify an output folder for all emitted files. */,
+    "rootDir": "./src",
+    "baseUrl": ".",
+    "lib": ["es2015", "es2017", "es2020.promise"],
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": false /* Ensure that casing is correct in imports. */,
+    "strict": false /* Enable all strict type-checking options. */,
+    "noUnusedLocals": false /* Enable error reporting when local variables aren't read. */,
+    "noUnusedParameters": false /* Raise an error when a function parameter isn't read. */,
+    "noImplicitReturns": false /* Enable error reporting for codepaths that do not explicitly return in a function. */,
+    "noFallthroughCasesInSwitch": false /* Enable error reporting for fallthrough cases in switch statements. */,
+    "skipLibCheck": false /* Skip type checking all .d.ts files. */,
+    "paths": {
+      "@components/*": ["src/Components/*"],
+      "@Helpers/*": ["src/Helpers/*"],
+      "@public/*": ["src/public/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"],
+  "files": ["types.d.ts"]
+}
