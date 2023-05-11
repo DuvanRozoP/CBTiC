@@ -38,6 +38,7 @@ router(app);
 // * Static
 app.use('/cv/pdf', express.static('src/public/cv'));
 app.use('/cvImg', express.static('src/public/imgCv'));
+app.use('/interacion', express.static('src/public/interacciones'));
 
 // * STARTED SERVER
 app.listen(port, () => {

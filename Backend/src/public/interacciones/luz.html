@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>interpretacion geometrica de la derivada:</h1>
+    <h3>ecuacion de la curva:</h3>
+    <div>
+        <input style="width: 300px; height: 50px;font-size: larger; " id="fonse" placeholder="x^2" type="text">
+        <button style="width: 100px; height: 50px; font-size: larger;" onclick="actuazarc()">modificar</button>
+        <h1>equacion de la recta tangente:</h1>
+        <h1 id="big" ></h1>
+    </div>
+
+    <div>
+        <canvas id="myChart" width="800" height="800"></canvas>
+    </div>
+
+    <div> 
+        <input style="width: 770px;margin-left: 30px; " id="favian"  type="range" min="0" max="7" step="0.25" >
+      <!--    <button style="width: 770px;margin-left: 30px;height: 100px;" onclick="actuazarc()">cambiar</button>
+        --> 
+    </div>
+
+</body>
+
+<script>
+     
+     //funcionan con monomios namas
+    
+     function hay(cadena){
+    let m=cadena.split("")
+    let hayx=0
+        for(i=0;i<m.length;i++){
+            if(m[i]=='x'){
+                hayx=1
+            }
+
+        }
+return hayx
+}
+
+
+
+    function funcion(cadena,index){
+        let total=0
+        let e=0
+        let enfermero=0
+        let doctora=0
+        let monomio=[]
+        let pot=0
+        let aux=0
+
+        monomio=cadena.split("")
+
+        
+
+        //mirar exponente
+        for(i=0;i<monomio.length;i++){
+            if(monomio[i]=='^'){
+                for(j=i+1;j<monomio.length;j++){
+                    switch(monomio[j]){
+                        case '1':
+                            pot=pot*10+1
+                            doctora=1
+                            break
+                        case '2':
+                            pot=pot*10+2
+                            doctora=1
+                            break
+                            case '3':
+                            pot=pot*10+3
+                            doctora=1
+                            break
+                            case '4':
+                            pot=pot*10+4
+                            doctora=1
+                            break
+                            case '5':
+                            pot=pot*10+5
+                            doctora=1
+                            break
+                            case '6':
+                            pot=pot*10+6
+                            doctora=1
+                            break
+                            case '7':
+                            pot=pot*10+7
+                            doctora=1
+                            break
+                            case '8':
+                            pot=pot*10+8
+                            doctora=1
+                            break
+                            case '9':
+                            pot=pot*10+9
+                            doctora=1
+                            break
+                            
+                            case '0':
+                            pot=pot*10+0
+                            doctora=1
+                            break
+                           
+                        
+
+                    }
+                }
+
+            }
+
+        }
+        
+
+        
+        if(hay(cadena)==1){
+            if(doctora!=0){
+            console.log(doctora)
+        index=Math.pow(index,pot)
+        doctora=0
+       }else{
+         index=Math.pow(index,1)
+         }
+
+        }else{
+            index=1
+        }
+
+         //mirar cohefiente
+         //falta que se cancele cuando no pone x pero si hago eso me mato ahora mismo
+        for(i=0;i<monomio.length;i++){
+            //importante ese if para que no me cuente el expolente, parece que no hacia falta 
+            if(e!=1){
+                switch(monomio[i]){
+                    case '1':
+                            aux=aux*10+1
+                            enfermero=1
+                            break
+                        case '2':
+                            aux=aux*10+2
+                            enfermero=1
+                            break
+                        case '3':
+                            aux=aux*10+3
+                            enfermero=1
+                            break
+                        case '4':
+                            aux=aux*10+4
+                            enfermero=1
+                            break
+                        case '5':
+                            aux=aux*10+5
+                            enfermero=1
+                            break
+                        case '6':
+                            aux=aux*10+6
+                            enfermero=1
+                            break
+                        case '9':
+                            aux=aux*10+7
+                            enfermero=1
+                            break
+                        case '0':
+                            aux=aux*10+0
+                            enfermero=1
+                            break
+                            
+                   case '^':
+                     e=1
+                     break
+                        
+                }
+            }
+
+        }
+        e=0 
+        
+        //cohefiente explisito
+        if(enfermero!=0){
+            total=index*aux
+            enfermero=0
+        } else  {
+            total=index
+        }
+
+        return total
+
+    }
+    function derivada(cadena,index){
+        let total=0
+        let e=0
+        let enfermero=0
+        let doctora=0
+        let monomio=[]
+        let pot=0
+        let aux=0
+
+        monomio=cadena.split("")
+
+        
+
+        //mirar exponente
+        for(i=0;i<monomio.length;i++){
+            if(monomio[i]=='^'){
+                for(j=i+1;j<monomio.length;j++){
+                    switch(monomio[j]){
+                        case '1':
+                            pot=pot*10+1
+                            doctora=1
+                            break
+                        case '2':
+                            pot=pot*10+2
+                            doctora=1
+                            break
+                            case '3':
+                            pot=pot*10+3
+                            doctora=1
+                            break
+                            case '4':
+                            pot=pot*10+4
+                            doctora=1
+                            break
+                            case '5':
+                            pot=pot*10+5
+                            doctora=1
+                            break
+                            case '6':
+                            pot=pot*10+6
+                            doctora=1
+                            break
+                            case '7':
+                            pot=pot*10+7
+                            doctora=1
+                            break
+                            case '8':
+                            pot=pot*10+8
+                            doctora=1
+                            break
+                            case '9':
+                            pot=pot*10+9
+                            doctora=1
+                            break
+                            
+                            case '0':
+                            pot=pot*10+0
+                            doctora=1
+                            break
+                           
+                        
+
+                    }
+                }
+
+            }
+
+        }
+
+        
+        
+        if(hay(cadena)==1){
+            if(doctora!=0){
+        index=Math.pow(index,pot-1)
+        index=index*pot
+        doctora=0
+       }else{
+         index=Math.pow(index,0)
+         }
+        }else{
+            index=0
+        }
+        
+         //mirar cohefiente
+         //falta que se cancele cuando no pone x pero si hago eso me mato ahora mismo
+        for(i=0;i<monomio.length;i++){
+            //importante ese if para que no me cuente el expolente, parece que no hacia falta 
+            if(e!=1){
+                switch(monomio[i]){
+                    case '1':
+                            aux=aux*10+1
+                            enfermero=1
+                            break
+                        case '2':
+                            aux=aux*10+2
+                            enfermero=1
+                            break
+                        case '3':
+                            aux=aux*10+3
+                            enfermero=1
+                            break
+                        case '4':
+                            aux=aux*10+4
+                            enfermero=1
+                            break
+                        case '5':
+                            aux=aux*10+5
+                            enfermero=1
+                            break
+                        case '6':
+                            aux=aux*10+6
+                            enfermero=1
+                            break
+                        case '9':
+                            aux=aux*10+7
+                            enfermero=1
+                            break
+                        case '0':
+                            aux=aux*10+0
+                            enfermero=1
+                            break
+                            
+                   case '^':
+                     e=1
+                     break
+                        
+                }
+            }
+
+        }
+        e=0 
+
+        //cohefiente explisito
+        if(enfermero!=0){
+            total=index*aux
+            enfermero=0
+        } else  {
+            total=index
+        }
+        
+        return total
+
+    }
+    
+    function poli(cadena,index){
+
+
+
+    }
+
+
+
+   function actuazarc(){
+        let excusa=document.getElementById("fonse").value
+        gorge=document.getElementById("favian").value
+        si=Number(gorge)
+        let punto=si/paso
+        let n
+        let fidel=derivada(excusa,punto)+"(x-"+punto+")"+"+"+funcion(excusa,punto)
+        document.getElementById("big").innerHTML=fidel
+        for(n=0;n<=total;n=n+paso){
+            if(derivada(excusa,punto)*(n-punto)+funcion(excusa,punto)==funcion(excusa,paso)){
+                juan[n]=derivada(excusa,punto)*(n-punto)+funcion(excusa,punto)
+            }else{
+                juan[n]=(derivada(excusa,punto)*(n-punto)+funcion(excusa,punto))*funcion(excusa,paso)
+
+            }
+            
+
+        }
+
+        for(n=0;n<=total;n=n+paso){
+            if(funcion(excusa,n)==funcion(excusa,paso)){
+                jose[n]=funcion(excusa,n)
+            }else{
+                jose[n]=funcion(excusa,n)*funcion(excusa,paso)
+
+            }
+
+        }
+       
+        myChart.update()
+    }
+
+    //obsoleto
+    function addData() {
+        
+        gorge=document.getElementById("favian").value
+        si=Number(gorge)
+        let punto=si/paso
+        
+        for(i=0;i<=total;i=i+paso){
+        juan[i]=(d(punto)*(i-punto)+f(punto))*(f(paso))
+        
+        }
+
+        
+        myChart.update();
+}
+
+        var x =0
+        var gorge
+        var rogue=[]
+        var like=[]
+        var favian
+        var index=0
+
+        var maria
+        var i,j
+        var xd
+        var jose=[]
+        var juan=[]
+        var bonusp=[]
+        
+        
+
+
+            //la config        
+        var si=3.5
+        var max=7
+        var paso=1/8
+
+
+        function f(x){return x*x}
+
+
+
+        function d(x){return 2*x}
+
+            
+        
+        //falta terminar
+        function t(x){ (d(punto)*(x-punto)+f(punto))*(f(paso)) }
+
+
+
+        var total=max/paso
+        let punto=si/paso
+
+            
+
+
+
+
+            //x
+        for(i=0;i<=total;i=i+paso){
+            xd=i*paso
+           
+            bonusp[i]=xd.toString() 
+        }
+        //f(x)
+        for(i=0;i<=total;i=i+paso){
+
+            maria=f(i)*(f(paso))
+            
+          jose[i]=maria.toString()
+
+          
+            
+        }
+        //f'(x)
+        for(i=0;i<=total;i=i+paso){
+
+            maria=(d(punto)*(i-punto)+f(punto))*(f(paso))
+           
+           juan[i]=maria.toString()
+        }
+        document.getElementById("big").innerHTML 
+
+
+    var ctx= document.getElementById("myChart").getContext("2d");
+    var myChart= new Chart(ctx,{
+
+
+        type:"line",
+        
+        data:{
+            labels:bonusp,
+            datasets:[{
+                    label:'curva',
+                    pointRadius:1,
+                    data:jose,
+                    fill:false,
+                    borderColor:'black'
+            },{
+                type: 'line',
+                pointRadius:1,
+            label: 'recta tangente',
+            borderColor:'red',
+            data: juan,
+            fill:false
+
+            }]
+        },
+        options:{
+            
+                responsive:false,
+                yAxes:[{
+                        ticks:{
+                            beginAtZero:true
+                        }
+                }]
+            
+        }
+    });
+
+        //su dichoso texto fidelito
+    let fidel=derivada(excusa,punto)+"(x-"+punto+")"+"+"+funcion(excusa,punto)
+        document.getElementById("big").innerHTML=fidel
+</script>
+
+</html>
