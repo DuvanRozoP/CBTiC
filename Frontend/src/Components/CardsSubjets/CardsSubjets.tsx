@@ -1,25 +1,43 @@
 import './CardsSubjets.css';
 import CardSubjets from './CardSubjets/CardSubjets';
 
-type arraySubjets = {
-  description: string;
+export type arraySubjets = {
+  Asignatura: string;
   img?: string;
+  DescriptionAsignatura?: string;
+  Descripcion?: {
+    Info: string;
+    Temas: string[];
+  };
+  Profesores?: {
+    name: string;
+    img?: string;
+  }[];
+  Interacciones?: {
+    name: string;
+    description: string;
+    path: string;
+  }[];
+  Libros?: {
+    name: string;
+    description: string;
+    autor: string;
+  };
 };
 
 interface PropsCardsSubjets {
   Titulo: string;
   subjets: arraySubjets[];
-  onMouseEnter?: () => void;
 }
 
-function CardsSubjets({ Titulo, subjets,onMouseEnter  }: PropsCardsSubjets) {
+function CardsSubjets({ Titulo, subjets  }: PropsCardsSubjets) {
   return (
     <section className='CardsSubjets'>
       <section className='TextCenter'>
         <h1>{Titulo}</h1>
         <section className='mapSubjets'>
           {subjets.map((subjet) => (
-            <CardSubjets description={subjet.description} onMouseEnter={onMouseEnter}/>
+            <CardSubjets Asignatura={subjet.Asignatura} />
           ))}
         </section>
       </section>
