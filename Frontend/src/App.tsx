@@ -9,6 +9,7 @@ import Nabvar from './Pages/Nabvar/Nabvar';
 import DetailSubjets from './Pages/DetailSubjets/DetailSubjets';
 import Teachers from './Pages/Teachers/Teachers';
 import Login from './Pages/Login/Login';
+import LeyDeFaraday from './Components/LeyDeFaraday/LeyDeFaraday';
 // & COMPONENTS
 // import Loading from './Components/Loading/Loading';
 
@@ -40,7 +41,11 @@ function App() {
         },
         {
           path: 'Noticias',
-          element: <></>
+          element: <>Noticias</>
+        },
+        {
+          path: '/interacion/leydefaraday',
+          element: <LeyDeFaraday/>
         }
       ],
     },
