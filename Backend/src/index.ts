@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import morgan from 'morgan';
 import cors from 'cors';
 // * DataBase.ts and Router.ts / imports
-import conexion from './DataBase';
+// import conexion from './DataBase';
 import router from './Router';
 
 dotenv.config();
@@ -11,13 +11,13 @@ const app = express();
 
 // * DATA CONNECTION DATABASE
 const port = process.env.PORT;
-const key = process.env.KEY;
-const user = process.env.USER;
+// const key = process.env.KEY;
+// const user = process.env.USER;
 
 // * CONNECT WITH MONGODB ATLAS
-conexion(
-  `mongodb+srv://${user}:${key}@cluster0.hp7r31t.mongodb.net/?retryWrites=true&w=majority`
-);
+// conexion(
+// `mongodb+srv://${user}:${key}@cluster0.hp7r31t.mongodb.net/?retryWrites=true&w=majority`
+// );
 
 // * Middlewares
 app.use(morgan('dev'));

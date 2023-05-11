@@ -26,7 +26,6 @@ export function getCv(origin: string): Promise<controller> {
 }
 
 export function getTeacher(): Promise<controller> {
-  const files = fs.readdirSync('src/public/imgCv/');
   const data = [
     {
       name: 'Alfonso Nicolas Romero Arias',
@@ -44,7 +43,7 @@ export function getTeacher(): Promise<controller> {
     },
     {
       name: 'Carlos Alberto Osorio Perez',
-      img: 'http://localhost:3003/cvImg/Alfonso_Nicolas_Romero_Arias.png',
+      img: 'http://localhost:3003/cvImg/Carlos_Alberto_Osorio_Pérez.png',
       titulo:
         'icenciado en matemáticas y física. Universidad de los llanos 2010',
       asignaturas: [
@@ -61,7 +60,7 @@ export function getTeacher(): Promise<controller> {
     },
     {
       name: 'David Felipe Castaneda Angarita',
-      img: files[3],
+      img: 'http://localhost:3003/cvImg/David_Felipe_Castañeda_Angarita.png',
       titulo:
         'Licenciado en matemáticas y física. Universidad de los llanos. 2022',
       asignaturas: [
@@ -76,7 +75,7 @@ export function getTeacher(): Promise<controller> {
     },
     {
       name: 'Fidel Bautista Rodríguez Puertas',
-      img: files[4],
+      img: 'http://localhost:3003/cvImg/Fidel_Bautista_Rodríguez_Puertas.png',
       titulo: 'Profesor Superior de Física Universidad de la Habana 1979',
       asignaturas: [
         'Física II. Sólido rígido, oscilaciones y ondas',
@@ -87,7 +86,7 @@ export function getTeacher(): Promise<controller> {
     },
     {
       name: 'Ivon Eliana Parra Cubillos',
-      img: files[5],
+      img: 'http://localhost:3003/cvImg/Ivon_Eliana_Parra_Cubillos.png',
       titulo: 'Licenciada en matemáticas y física (20 de enero de 2011)',
       asignaturas: [
         'Termodinámica',
@@ -98,7 +97,7 @@ export function getTeacher(): Promise<controller> {
     },
     {
       name: 'Jesús Alejandro González Rojas',
-      img: files[6],
+      img: 'http://localhost:3003/cvImg/Jesús_Alejandro_González_Rojas.png',
       titulo: 'Biólogo. (Universidad de los Llanos. 2021)',
       asignaturas: [
         'Biología general y laboratorio',
@@ -112,7 +111,7 @@ export function getTeacher(): Promise<controller> {
     },
     {
       name: 'Johan Ricardo Morales Ortiz',
-      img: files[2],
+      img: 'http://localhost:3003/cvImg/Johan_Ricardo_Morales_Ortiz.png',
       titulo: 'Ingeniero Agroindustrial. Universidad de los Llanos. 2022',
       asignaturas: [
         'Química General',
@@ -126,6 +125,7 @@ export function getTeacher(): Promise<controller> {
     },
     {
       name: 'Karen Ximena Sandoval Parra',
+      img: 'http://localhost:3003/cvImg/Karen_Ximena_Sandoval_Parra.png',
       titulo: 'Bióloga. Universidad de los Llanos. 2018',
       asignaturas: [
         'Biología general y laboratorio',
@@ -140,6 +140,7 @@ export function getTeacher(): Promise<controller> {
     },
     {
       name: 'LAURA FERNANDA OSPITIA BELTRÁN',
+      img: 'http://localhost:3003/cvImg/LAURA_FERNANDA__OSPITIA_BELTRÁN.png',
       titulo: 'Licenciada en matemáticas y física. 2022',
       asignaturas: [
         'Cálculo Integral',
@@ -155,6 +156,7 @@ export function getTeacher(): Promise<controller> {
     },
     {
       name: 'Nicolas Andres Barreto Montenegro',
+      img: 'http://localhost:3003/cvImg/Nicolas_Andres_Barreto_Montenegro.png',
       titulo: 'Ingeniero químico (Universidad Jorge Tadeo Lozano, 2020',
       asignaturas: [
         'Química general',
@@ -166,6 +168,7 @@ export function getTeacher(): Promise<controller> {
     },
     {
       name: 'Wilder Arleht Angarita Osorio',
+      img: 'http://localhost:3003/cvImg/Wilder_Arleht_Angarita_Osorio.png',
       titulo:
         ' Licenciatura en matemáticas y física (Universidad de los Llanos- 2019) ',
       asignaturas: [
@@ -179,6 +182,7 @@ export function getTeacher(): Promise<controller> {
     },
     {
       name: 'Wilmer Spilberg Bustos Adrada',
+      img: 'http://localhost:3003/cvImg/Wilmer_Spilberg_Bustos_Adrada.png',
       titulo: 'Ingeniero químico, Universidad Nacional de Colombia - 2018',
       asignaturas: [
         'Matemáticas básicas',
@@ -194,7 +198,12 @@ export function getTeacher(): Promise<controller> {
   ];
 
   const promise = new Promise((resolve) => {
-    resolve(data);
+    resolve({
+      statusOk: 200,
+      message: data,
+    });
   });
   return promise;
 }
+
+

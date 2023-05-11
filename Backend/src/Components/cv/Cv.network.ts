@@ -1,8 +1,8 @@
-import express, { Request, Response, Router } from 'express';
+import { Request, Response, Router } from 'express';
 // & HELPERS
 import { sendServe } from '../../Helpers/response';
 // * CONTROLLERS
-import { getCv } from './Cv.controller';
+import { getCv, getTeacher } from './Cv.controller';
 
 const router = Router();
 
@@ -11,5 +11,10 @@ const router = Router();
 router.get('/get', (_request: Request, response: Response) => {
   sendServe(response, () => getCv('src/public/cv'));
 });
+
+router.get('/teacher', (_request: Request, response: Response) => {
+  sendServe(response, () => getTeacher());
+});
+
 
 export default router;
