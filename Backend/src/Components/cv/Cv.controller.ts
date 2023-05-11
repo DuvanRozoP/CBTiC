@@ -40,6 +40,7 @@ export function getTeacher(): Promise<controller> {
         'Calculo Diferencial',
         'Laboratirio Mecanica',
       ],
+      url: 'http://localhost:3003/cv/Alfonso_Nicolas_Romero_Arias.pdf'
     },
     {
       name: 'Carlos Alberto Osorio Perez',
@@ -57,6 +58,7 @@ export function getTeacher(): Promise<controller> {
         'Fisica III electromagnetismo',
       ],
       tutorias: 'Miércoles de 04:00 a 6:00 P.M y Viernes de 08:00 - 12:00',
+      url: 'http://localhost:3003/cv/Carlos_Alberto_Osorio_Perez.pdf'
     },
     {
       name: 'David Felipe Castaneda Angarita',
@@ -72,6 +74,7 @@ export function getTeacher(): Promise<controller> {
         'Fisica I mecanica y laboratorio',
       ],
       tutorias: 'Lunes a viernes 4:00 a 6:00 pm',
+      url:'http://localhost:3003/cv/David_Felipe_Castaneda_Angarita.pdf'
     },
     {
       name: 'Fidel Bautista Rodríguez Puertas',
@@ -83,6 +86,7 @@ export function getTeacher(): Promise<controller> {
         'Termodinámica',
       ],
       tutorias: 'martes de 8 a 12 a.m. Oficina primer piso pantano de Vargas',
+      url:'http://localhost:3003/cv/Fidel_Bautista_Rodríguez_Puertas.pdf'
     },
     {
       name: 'Ivon Eliana Parra Cubillos',
@@ -94,6 +98,7 @@ export function getTeacher(): Promise<controller> {
         'matemática básica',
       ],
       tutorias: '',
+      url:'http://localhost:3003/cv/Ivon_Eliana_Parra_Cubillos.pdf'
     },
     {
       name: 'Jesús Alejandro González Rojas',
@@ -179,6 +184,7 @@ export function getTeacher(): Promise<controller> {
         'Metodos numericos',
       ],
       tutorias: '',
+      url: ''
     },
     {
       name: 'Wilmer Spilberg Bustos Adrada',
@@ -195,6 +201,12 @@ export function getTeacher(): Promise<controller> {
       tutorias:
         ' Martes a viernes, 8am a 10 am. Oficina 103 Ed. Pantano de Vargas.',
     },
+    {
+      name: 'Camilo Lesmes Fabián',
+      img: 'http://localhost:3003/cvImg/Camilo_Lesmes_Fabián.png',
+      titulo: 'Ingeniero Agrónomo, Universidad Pedagógica y Tecnológica de Colombia.',
+      url:'http://localhost:3003/cv/Camilo_Lesmes_Fabián.pdf'
+    }
   ];
 
   const promise = new Promise((resolve) => {

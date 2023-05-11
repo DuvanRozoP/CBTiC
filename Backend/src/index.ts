@@ -36,7 +36,7 @@ app.use(express.urlencoded({ extended: true }));
 router(app);
 
 // * Static
-app.use('/cv/pdf', express.static('src/public/cv'));
+app.use('/cv', express.static('src/public/cv'));
 app.use('/cvImg', express.static('src/public/imgCv'));
 app.use('/interacion', express.static('src/public/interacciones'));
 

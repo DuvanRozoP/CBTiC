@@ -8,3 +8,11 @@ export const getcvteacher = async () => {
       console.error(error);
     }
   };
+  export const getcv = async () => {
+    try {
+      const response = await axios.get('http://localhost:3003/cv/get');
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  };

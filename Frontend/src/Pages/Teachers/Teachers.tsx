@@ -3,12 +3,6 @@ import CardsTeacher from '../../Components/CardsTeacher/CardsTeacher';
 import { getcvteacher } from '../../api/cv';
 import './Teachers.css'
 
-const Teacher = [
-  {
-    description: "Fisica",
-  }
-]
-
 function Teachers(){
   const [subject, setSubject] = useState<any>();
   useEffect(() => {
