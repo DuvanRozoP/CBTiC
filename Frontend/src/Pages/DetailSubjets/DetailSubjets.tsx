@@ -3,7 +3,8 @@ import './DetailSubjets.css';
 import { useParams } from 'react-router-dom';
 
 import authorPredeterminate from '../../assets/icons/authorPredeterminate.png';
-import Faraday from '../../assets/Presentation/WhatsApp Image 2023-05-10 at 4.20.10 PM.jpeg'
+import Faraday from '../../assets/Presentation/WhatsApp Image 2023-05-11 at 2.50.50 AM.jpeg'
+
 const Descripcion = [
   {
     Info: 'Este curso cuenta con cinco capítulos: Electrostática, Corriente eléctrica continua, Campo magnético, Inducción electromagnética y Ecuaciones de Maxwell. En cada uno de estos capítulos aparecen problemas resueltos y al final de cada uno de ellos se ha dispuesto de una colección de problemas propuestos. El texto incluye un producto multimedia',
@@ -106,19 +107,19 @@ function DetailSubjets() {
       <section className='detailDescription'>
         <div className='miniNavbar'>
           <button
-            onClick={() => setMenu('descripcion')}
+            onClick={() => { setMenu('descripcion'); }}
             className={`${menu === 'descripcion' ? 'Active' : 'Disabled'}`}
           >
             Descripcion
           </button>
           <button
-            onClick={() => setMenu('profesores')}
+            onClick={() => { setMenu('profesores'); }}
             className={`${menu === 'profesores' ? 'Active' : 'Disabled'}`}
           >
             Profesores
           </button>
           <button
-            onClick={() => setMenu('interacciones')}
+            onClick={() => { setMenu('interacciones'); }}
             className={`${menu === 'interacciones' ? 'Active' : 'Disabled'}`}
           >
             Interacciones
