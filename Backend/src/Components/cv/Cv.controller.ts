@@ -139,7 +139,7 @@ export function getTeacher(): Promise<controller> {
         'lunes de 9 a 11 a.m. y miércoles de 4 a 6 p.m. Oficina primer piso pantano de Vargas',
     },
     {
-      name: 'LAURA FERNANDA OSPITIA BELTRÁN',
+      name: 'Laura Fernanda Ospitia Beltrán',
       img: 'http://localhost:3003/cvImg/LAURA_FERNANDA__OSPITIA_BELTRÁN.png',
       titulo: 'Licenciada en matemáticas y física. 2022',
       asignaturas: [
@@ -155,7 +155,7 @@ export function getTeacher(): Promise<controller> {
       tutorias: 'miércoles de 8-12 am',
     },
     {
-      name: 'Nicolas Andres Barreto Montenegro',
+      name: 'Nicolas Barreto Montenegro',
       img: 'http://localhost:3003/cvImg/Nicolas_Andres_Barreto_Montenegro.png',
       titulo: 'Ingeniero químico (Universidad Jorge Tadeo Lozano, 2020',
       asignaturas: [

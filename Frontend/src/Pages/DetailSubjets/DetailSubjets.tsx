@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react';
 import './DetailSubjets.css';
 import { useParams } from 'react-router-dom';
 import { getDetails } from '../../api/detail';
-import authorPredeterminate from '../../assets/icons/authorPredeterminate.png';
-import Faraday from '../../assets/Presentation/WhatsApp Image 2023-05-10 at 4.20.10 PM.jpeg';
-import Onda from '../../assets/Presentation/WhatsApp Image 2023-05-10 at 6.06.34 PM.jpeg'
+import Faraday from '../../assets/Presentation/faraday.jpeg';
+import Onda from '../../assets/Presentation/onda.jpeg'
 function AboutSubjets(props: { subject: any }) {
   const { subject } = props;
   return (

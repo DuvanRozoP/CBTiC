@@ -10,7 +10,6 @@
     padding: 20px;
     flex-direction: row;
     gap: 64px;
-    align-items: center;
     justify-content: space-evenly;
 }
 .Cardimg{
