@@ -1,46 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './DetailSubjets.css';
 import { useParams } from 'react-router-dom';
-
+import { getDetails } from '../../api/detail';
 import authorPredeterminate from '../../assets/icons/authorPredeterminate.png';
-import Faraday from '../../assets/Presentation/WhatsApp Image 2023-05-11 at 2.50.50 AM.jpeg'
-
-const Descripcion = [
-  {
-    Info: 'Este curso cuenta con cinco capítulos: Electrostática, Corriente eléctrica continua, Campo magnético, Inducción electromagnética y Ecuaciones de Maxwell. En cada uno de estos capítulos aparecen problemas resueltos y al final de cada uno de ellos se ha dispuesto de una colección de problemas propuestos. El texto incluye un producto multimedia',
-    Temas: ['Ley de Coulomb','Campo Electrostático','Potencial Electrostático', 'Ley de Gauss', 'Condensadores', 'Experimento de Oersted', 'Fuerza de Lorentz', 'Ley de Ampere', 'Efecto Hall','Ley de Faraday', 'Campo Electromagnetico'],
-  },
-];
-
-function AboutSubjets() {
+import Faraday from '../../assets/Presentation/WhatsApp Image 2023-05-10 at 4.20.10 PM.jpeg';
+import image from '../../../../Backend/src/public/imgCv/Fidel_Bautista_Rodríguez_Puertas.png'
+function AboutSubjets(props: { subject: any }) {
+  const { subject } = props;
   return (
     <section className='descriptionCurso'>
-      <h1>Sobre este curso</h1>
-      {Descripcion.map((element) => {
-        return <p key={element.Info}>{element.Info}</p>;
-      })}
-      <br />
-      <h1>Temas</h1>
-      {Descripcion.map((element, index) => {
-        return (
-          <section key={index} className='TemasCard'>
-            {element.Temas.map((tema, indexTema) => {
-              return (
-                <div key={indexTema} className='TemaCard'>
-                  <h3>
-                    {indexTema+1} 
-                  </h3>
-                  <p>{tema}</p>
-                </div>
-              );
-            })}
-          </section>
-        );
-      })}
+      {subject && (
+        <>
+          <h1>Sobre este curso</h1>
+          <p>{subject.Descripcion.Info}</p>
+          <br />
+          <h1>Temas</h1>
+          {subject.Descripcion.Temas.map((tema: any, indexTema: number) => {
+            return (
+              <div key={indexTema} className='TemaCard'>
+                <h3>{indexTema + 1}</h3>
+                <p>{tema}</p>
+              </div>
+            );
+          })}
+        </>
+      )}
     </section>
   );
 }
-
 
 // ~ PROFESORES ACARGO DE LA ASIGNATURA
 
@@ -63,15 +50,16 @@ const Profesores = [
   },
 ];
 
-function AuthorTeacher() {
+function AuthorTeacher(props: { subject: any }) {
+  const { subject } = props;
   return (
     <section className='authorTeacher'>
       <h1>Profesores</h1>
       <div className='cardsTeacher'>
-        {Profesores.map((element) => {
+        {subject.Profesores.map((element:any) => {
           return (
             <section key={element.name} className='cardTeacher'>
-              <img src={element.img} alt={element.name} />
+              <img src={image} alt={element.name} />
               <h1>{element.name}</h1>
             </section>
           );
@@ -80,24 +68,39 @@ function AuthorTeacher() {
     </section>
   );
 }
-function AboutInteracciones(){
-  return(
+function AboutInteracciones() {
+  return (
     <section className='AboutInteracciones'>
       <h1>Interacciones</h1>
       <div className='CardInteraccion'>
-        <img src={Faraday} alt="" />
+        <img src={Faraday} alt='' />
         <div>
           <h3>Ley de Faraday</h3>
         </div>
       </div>
     </section>
-  )
+  );
 }
 // * FATHER
 function DetailSubjets() {
-  const [menu, setMenu] = useState('interacciones');
-  const description  = useParams();
-  console.log(description);
+  const [menu, setMenu] = useState('descripcion');
+  const description = useParams();
+  const [subject, setSubject] = useState<any>();
+  useEffect(() => {
+    const fetchSubjets = async () => {
+      try {
+        const response = await getDetails();
+        for (let i = 0; i < response.length; i++) {
+          if (response[i].Asignatura == description.subjectId) {
+            setSubject(response[i]);
+          }
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchSubjets();
+  }, []);
   return (
     <section className='DetailSubject'>
       <section className='detailPresentation'>
@@ -107,19 +110,19 @@ function DetailSubjets() {
       <section className='detailDescription'>
         <div className='miniNavbar'>
           <button
-            onClick={() => { setMenu('descripcion'); }}
+            onClick={() => setMenu('descripcion')}
             className={`${menu === 'descripcion' ? 'Active' : 'Disabled'}`}
           >
             Descripcion
           </button>
           <button
-            onClick={() => { setMenu('profesores'); }}
+            onClick={() => setMenu('profesores')}
             className={`${menu === 'profesores' ? 'Active' : 'Disabled'}`}
           >
             Profesores
           </button>
           <button
-            onClick={() => { setMenu('interacciones'); }}
+            onClick={() => setMenu('interacciones')}
             className={`${menu === 'interacciones' ? 'Active' : 'Disabled'}`}
           >
             Interacciones

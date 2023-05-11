@@ -1,20 +1,19 @@
 import './CardSubjets.css';
-
 import predeterminate from '../../../assets/pretedeterminadoAsignature.webp';
 import { Link } from 'react-router-dom';
-
+import { arraySubjets } from '../CardsSubjets';
 interface PropsCardSubjects {
-  description: string;
+  Asignatura: string;
   img?: string;
   onMouseEnter?: () => void;
 }
 
-function CardSubjets({ description, img = predeterminate,onMouseEnter }: PropsCardSubjects) {
+function CardSubjets({ Asignatura, img = predeterminate }: PropsCardSubjects) {
   return (
-    <section className='CardSubjets' onMouseEnter={onMouseEnter}>
-      <Link to={`/detailsubjets/${description}`} > 
-        <img src={img} alt={description} />
-        <div>{description}</div>
+    <section className='CardSubjets'>
+      <Link to={`/detailsubjets/${Asignatura}`} > 
+        <img src={img} alt={Asignatura} />
+        <div>{Asignatura}</div>
       </Link>
     </section>
   );

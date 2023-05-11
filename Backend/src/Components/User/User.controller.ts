@@ -32,18 +32,77 @@ type Asignatura = {
 };
 
 export default function getAsignaturas(): Promise<controller> {
-  const data: Asignatura[] = [
+  const data = [
     {
-      Asignatura: 'Fisica III',
+      Asignatura: 'Cálculo I',
+      Descripcion: {
+        Info:'',
+        Temas: []
+      },
+      Profesores: [
+       
+      ],
+    },
+    {
+      Asignatura: 'Cálculo II',
+      Descripcion: {
+        Info:'',
+        Temas: []
+      },Profesores: [
+       
+      ],
+    },
+    {
+      Asignatura: 'Cálculo III',
+      Descripcion: {
+        Info:'',
+        Temas: []
+      },
+      Profesores: [
+       
+      ],
+    },
+    {
+      Asignatura: 'Física I',
+      Descripcion: {
+        Info:'',
+        Temas: []
+      },
+      Profesores: [
+       
+      ],
+    },
+    {
+      Asignatura: 'Física II',
+      Descripcion: {
+        Info:'',
+        Temas: []
+      },
+      Profesores: [
+       
+      ],
+    },
+    {
+      Asignatura: 'Física III',
       DescriptionAsignatura: 'Electromagnetismo',
       Descripcion: {
-        Info: '',
-        Temas: ['Ley De Faraday', 'Ley De Gauss'],
+        Info: 'Este curso cuenta con cinco capítulos: Electrostática, Corriente eléctrica continua, Campo magnético, Inducción electromagnética y Ecuaciones de Maxwell. En cada uno de estos capítulos aparecen problemas resueltos y al final de cada uno de ellos se ha dispuesto de una colección de problemas propuestos. El texto incluye un producto multimedia',
+        Temas: ['Ley de Coulomb',
+        'Campo Electrostático',
+        'Potencial Electrostático',
+        'Ley de Gauss',
+        'Condensadores',
+        'Experimento de Oersted',
+        'Fuerza de Lorentz',
+        'Ley de Ampere',
+        'Efecto Hall',
+        'Ley de Faraday',
+        'Campo Electromagnetico',],
       },
       Profesores: [
         {
           name: 'Fidel Bautista Rodríguez Puertas',
-          img: 'se la debo',
+          img: '',
         },
       ],
       Interacciones: [
@@ -64,6 +123,7 @@ export default function getAsignaturas(): Promise<controller> {
         autor: '',
       },
     },
+    
   ];
   const promise = new Promise((resolve) => {
     resolve({
