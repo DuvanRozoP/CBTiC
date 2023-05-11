@@ -1,40 +1,42 @@
 import './Teacher.css';
 import CardsSubjets from '../../Components/CardsSubjets/CardsSubjets';
-
+import { getDetails } from '../../api/detail';
+import { useState, useEffect } from 'react';
 const subjetsCalculo = [
   {
-    description: 'Cálculo I',
+    Asignatura: 'Cálculo I',
   },
   {
-    description: 'Cálculo II',
+    Asignatura: 'Cálculo II',
   },
   {
-    description: 'Cálculo III',
-  },
-];
-const subjetsFisica = [
-  {
-    description: 'Física I',
-  },
-  {
-    description: 'Física II',
-  },
-  {
-    description: 'Física III',
+    Asignatura: 'Cálculo III',
   },
 ];
 const subjetsEd = [
   {
-    description: 'Ecuaciones Diferenciales',
+    Asignatura: 'Ecuaciones Diferenciales',
   },
 ];
 function Teacher() {
-  const handleMouseEnter = () => {
-    return(<div>
-      <h1>Hola</h1>
-    </div>)
-  };
+  const [subjetsFisica, setSubjetsFisica] = useState([]);
+  const [subjectsCalculo, setSubjetsCalculo]  = useState([]);
+  useEffect(() => {
+    const fetchSubjets = async () => {
+      try {
+        const response = await getDetails();
+        const calculoSubjets = response.filter((subject:any) => subject.Asignatura.startsWith('Cálculo'))
+        const fisicaSubjects = response.filter((subject:any) => subject.Asignatura.startsWith('Física'));
+        setSubjetsFisica(fisicaSubjects);
+        setSubjetsCalculo(calculoSubjets);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
+    fetchSubjets();
+  }, []);
+  console.log(subjetsFisica);
   return (
     <section className='containerBook'>
       <section className='searchBax'>
@@ -48,18 +50,18 @@ function Teacher() {
       <section className='subjets'>
         <CardsSubjets
           Titulo='MULTIMEDIA CÁLCULO'
-          subjets={subjetsCalculo}
-          onMouseEnter={handleMouseEnter}
+          subjets={subjectsCalculo}
+         
         />
         <CardsSubjets
           Titulo='MULTIMEDIA FÍSICA'
           subjets={subjetsFisica}
-          onMouseEnter={handleMouseEnter}
+         
         />
         <CardsSubjets
           Titulo='MULTIMEDIA ECUACIONES DIFERENCIALES'
           subjets={subjetsEd}
-          onMouseEnter={handleMouseEnter}
+        
         />
       </section>
     </section>
