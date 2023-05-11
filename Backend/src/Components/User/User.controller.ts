@@ -66,7 +66,10 @@ export default function getAsignaturas(): Promise<controller> {
     },
   ];
   const promise = new Promise((resolve) => {
-    resolve(data);
+    resolve({
+      statusOk: 200,
+      message: data
+    });
   });
   return promise;
 }

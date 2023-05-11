@@ -7,7 +7,7 @@ import { Response } from 'express';
  */
 export type controller = {
   statusOk?: number;
-  message?: string | Uint8Array;
+  message?: any;
 };
 
 /**
