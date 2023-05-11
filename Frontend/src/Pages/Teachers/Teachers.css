@@ -102,4 +102,5 @@
     align-items: center;
     flex-wrap: wrap;
     padding-top: 10%;
+    gap: 50px;
   }
