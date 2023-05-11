@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getDetails } from '../../api/detail';
 import authorPredeterminate from '../../assets/icons/authorPredeterminate.png';
 import Faraday from '../../assets/Presentation/WhatsApp Image 2023-05-10 at 4.20.10 PM.jpeg';
-import image from '../../../../Backend/src/public/imgCv/Fidel_Bautista_Rodríguez_Puertas.png'
+import Onda from '../../assets/Presentation/WhatsApp Image 2023-05-10 at 6.06.34 PM.jpeg'
 function AboutSubjets(props: { subject: any }) {
   const { subject } = props;
   return (
@@ -31,35 +31,16 @@ function AboutSubjets(props: { subject: any }) {
 
 // ~ PROFESORES ACARGO DE LA ASIGNATURA
 
-const Profesores = [
-  {
-    name: 'No hay profesores',
-    img: authorPredeterminate,
-  },
-  {
-    name: 'No hay profesores',
-    img: authorPredeterminate,
-  },
-  {
-    name: 'No hay profesores',
-    img: authorPredeterminate,
-  },
-  {
-    name: 'No hay profesores',
-    img: authorPredeterminate,
-  },
-];
-
 function AuthorTeacher(props: { subject: any }) {
   const { subject } = props;
   return (
     <section className='authorTeacher'>
       <h1>Profesores</h1>
       <div className='cardsTeacher'>
-        {subject.Profesores.map((element:any) => {
+        {subject.Profesores.map((element: any) => {
           return (
             <section key={element.name} className='cardTeacher'>
-              <img src={image} alt={element.name} />
+              <img src={element.img} alt={element.name} />
               <h1>{element.name}</h1>
             </section>
           );
@@ -68,15 +49,22 @@ function AuthorTeacher(props: { subject: any }) {
     </section>
   );
 }
-function AboutInteracciones() {
+function AboutInteracciones(props: { subject: any }) {
+  const { subject } = props;
+  console.log(subject);
   return (
     <section className='AboutInteracciones'>
       <h1>Interacciones</h1>
-      <div className='CardInteraccion'>
-        <img src={Faraday} alt='' />
-        <div>
-          <h3>Ley de Faraday</h3>
-        </div>
+      <div className='ContentdCard'>
+        {subject.Interacciones.map((element: any, index:number) => {
+          let imgSrc = index % 2 === 0 ? Onda : Faraday;
+          return (
+            <section className='CardInteraccion'>
+              <img src={imgSrc} alt='' />
+              <h3>{element.name}</h3>
+            </section>
+          );
+        })}
       </div>
     </section>
   );
@@ -133,8 +121,10 @@ function DetailSubjets() {
               </button>
             </div>
             {menu === 'descripcion' && <AboutSubjets subject={subject} />}
-            {menu === 'profesores' && <AuthorTeacher subject={subject}/>}
-            {menu === 'interacciones' && <AboutInteracciones />}
+            {menu === 'profesores' && <AuthorTeacher subject={subject} />}
+            {menu === 'interacciones' && (
+              <AboutInteracciones subject={subject} />
+            )}
           </section>
         </>
       )}

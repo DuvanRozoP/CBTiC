@@ -2,17 +2,6 @@ import './Teacher.css';
 import CardsSubjets from '../../Components/CardsSubjets/CardsSubjets';
 import { getDetails } from '../../api/detail';
 import { useState, useEffect } from 'react';
-const subjetsCalculo = [
-  {
-    Asignatura: 'Cálculo I',
-  },
-  {
-    Asignatura: 'Cálculo II',
-  },
-  {
-    Asignatura: 'Cálculo III',
-  },
-];
 const subjetsEd = [
   {
     Asignatura: 'Ecuaciones Diferenciales',

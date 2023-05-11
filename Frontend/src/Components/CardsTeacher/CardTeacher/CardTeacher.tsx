@@ -7,9 +7,11 @@ interface PropsCardTeacher {
 }
 
 function CardTeacher({ description, img = predeterminate }: PropsCardTeacher) {
+    console.log(description);
     return (
       <section className='CardTeacher'>
           <img src={img} alt={description} />
+          <p>{description}</p>
       </section>
     );
 }

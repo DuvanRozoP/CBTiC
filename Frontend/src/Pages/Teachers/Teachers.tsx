@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react';
 import CardsTeacher from '../../Components/CardsTeacher/CardsTeacher';
+import { getcvteacher } from '../../api/cv';
 import './Teachers.css'
 
 const Teacher = [
@@ -6,9 +8,21 @@ const Teacher = [
     description: "Fisica",
   }
 ]
- 
 
 function Teachers(){
+  const [subject, setSubject] = useState<any>();
+  useEffect(() => {
+    const fetchSubjets = async () => {
+      try {
+        const response = await getcvteacher();
+        setSubject(response);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchSubjets();
+  }, []);
     return (
         <section className='containerBook'>
         <section className='searchBax'>
@@ -20,8 +34,14 @@ function Teachers(){
         </section>
         <hr />
         <section className='Teachers'>
-          <CardsTeacher Titulo={'Fidel Bautista'} Teachers={Teacher}></CardsTeacher>
-          <CardsTeacher Titulo={'Fidel Bautista'} Teachers={Teacher}></CardsTeacher>
+        {subject && (
+        <>
+          {subject.map((element:any)=>{
+            return(
+              <CardsTeacher Titulo={element.name}  Teachers={[element]}></CardsTeacher>
+            )
+          })}
+          </>)}
         </section>
       </section>
     )

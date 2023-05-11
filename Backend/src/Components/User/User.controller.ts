@@ -35,13 +35,38 @@ export default function getAsignaturas(): Promise<controller> {
   const data = [
     {
       Asignatura: 'Cálculo I',
+      DescriptionAsignatura:'Diferencial',
       Descripcion: {
-        Info:'',
-        Temas: []
+        Info:'El cálculo diferencial integra el pensamiento analítico con el comportamiento real de los sistemas físicos. Muchas situaciones de la física, la química, la economía y otras, pueden modelarse como razones de cambio, tema del que se ocupa el Cálculo Diferencial. Para un ingeniero es indispensable aplicar las matemáticas y en especial el cálculo infinitesimal en la descripción, interpretación y modelación de fenómenos físicos y en la optimización de los recursos de un sistema y la predicción de riesgos, entre otros.',
+        Temas: [
+          'Matemática básica',
+          'Funciones y límites',
+          'Operador Derivada',
+          'Aplicación de las derivadas. Puntos críticos de una función',
+          'Aplicación de la derivada a problemas de la física'
+        ]
       },
       Profesores: [
-       
+        {
+          name:'Wilder Arleht Angarita Osorio',
+          img:'http://localhost:3003/cvImg/Wilder_Arleht_Angarita_Osorio.png'
+        },
+       {
+        name:'Alfonso Nicolas Romero Arias',
+        img:'http://localhost:3003/cvImg/Alfonso_Nicolas_Romero_Arias.png'
+       },
+       {
+        name:'Carlos Alberto Osorio Pérez',
+        img:'http://localhost:3003/cvImg/Carlos_Alberto_Osorio_Pérez.png'
+       },
+       {
+        name:'Wilmer Spilberg Bustos Adrada',
+        img:'http://localhost:3003/cvImg/Wilmer_Spilberg_Bustos_Adrada.png'
+       }
       ],
+      Interacciones: [
+        
+      ]
     },
     {
       Asignatura: 'Cálculo II',
@@ -51,6 +76,9 @@ export default function getAsignaturas(): Promise<controller> {
       },Profesores: [
        
       ],
+      Interacciones: [
+        
+      ]
     },
     {
       Asignatura: 'Cálculo III',
@@ -61,6 +89,9 @@ export default function getAsignaturas(): Promise<controller> {
       Profesores: [
        
       ],
+      Interacciones: [
+        
+      ]
     },
     {
       Asignatura: 'Física I',
@@ -71,6 +102,9 @@ export default function getAsignaturas(): Promise<controller> {
       Profesores: [
        
       ],
+      Interacciones: [
+        
+      ]
     },
     {
       Asignatura: 'Física II',
@@ -81,6 +115,9 @@ export default function getAsignaturas(): Promise<controller> {
       Profesores: [
        
       ],
+      Interacciones: [
+
+      ]
     },
     {
       Asignatura: 'Física III',
@@ -102,8 +139,16 @@ export default function getAsignaturas(): Promise<controller> {
       Profesores: [
         {
           name: 'Fidel Bautista Rodríguez Puertas',
-          img: '',
+          img: 'http://localhost:3003/cvImg/Fidel_Bautista_Rodríguez_Puertas.png',
         },
+        {
+          name: 'Carlos Alberto Osorio Pérez',
+          img:'http://localhost:3003/cvImg/Carlos_Alberto_Osorio_Pérez.png'
+        },
+        {
+          name: 'Ivon Eliana Parra Cubillos',
+          img: 'http://localhost:3003/cvImg/Ivon_Eliana_Parra_Cubillos.png',
+        }
       ],
       Interacciones: [
         {
