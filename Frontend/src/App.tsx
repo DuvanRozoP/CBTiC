@@ -31,7 +31,7 @@ function App() {
           element: <Teacher />,
         },
         {
-          path: 'detailsubjets',
+          path: 'detailsubjets/:subjectId',
           element: <DetailSubjets />
         },
         {
@@ -39,7 +39,7 @@ function App() {
           element: <Teachers />
         },
         {
-          path: 'Interaciones',
+          path: 'Noticias',
           element: <></>
         }
       ],

@@ -9,16 +9,17 @@ type arraySubjets = {
 interface PropsCardsSubjets {
   Titulo: string;
   subjets: arraySubjets[];
+  onMouseEnter?: () => void;
 }
 
-function CardsSubjets({ Titulo, subjets }: PropsCardsSubjets) {
+function CardsSubjets({ Titulo, subjets,onMouseEnter  }: PropsCardsSubjets) {
   return (
     <section className='CardsSubjets'>
       <section className='TextCenter'>
         <h1>{Titulo}</h1>
         <section className='mapSubjets'>
           {subjets.map((subjet) => (
-            <CardSubjets description={subjet.description} />
+            <CardSubjets description={subjet.description} onMouseEnter={onMouseEnter}/>
           ))}
         </section>
       </section>
