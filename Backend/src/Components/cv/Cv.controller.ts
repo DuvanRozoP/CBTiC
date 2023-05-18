@@ -28,10 +28,16 @@ export function getCv(origin: string): Promise<controller> {
 export function getTeacher(): Promise<controller> {
   const data = [
     {
+      name: 'Camilo Lesmes Fabián',
+      img: 'http://localhost:3003/cvImg/Camilo_Lesmes_Fabián.png',
+      titulo: 'Ingeniero Agrónomo, Universidad Pedagógica y Tecnológica de Colombia.',
+      url:'http://localhost:3003/cv/Camilo_Lesmes_Fabián.pdf'
+    },
+    {
       name: 'Alfonso Nicolas Romero Arias',
       img: 'http://localhost:3003/cvImg/Alfonso_Nicolas_Romero_Arias.png',
       titulo:
-        'Licenciado en Matematicas y Fisica, Universidad de los Llanos, 2022',
+        'Licenciado en Matemáticas y Física, Universidad de los Llanos, 2022',
       asignaturas: [
         'Fisica y Laboratiorios Mecanica',
         'Estadistica Descriptiva',
@@ -46,7 +52,7 @@ export function getTeacher(): Promise<controller> {
       name: 'Carlos Alberto Osorio Perez',
       img: 'http://localhost:3003/cvImg/Carlos_Alberto_Osorio_Pérez.png',
       titulo:
-        'icenciado en matemáticas y física. Universidad de los llanos 2010',
+        'Licenciado en matemáticas y física. Universidad de los llanos 2010',
       asignaturas: [
         'Probabilidad y estadistica',
         'Estadistica descriptiva',
@@ -201,12 +207,7 @@ export function getTeacher(): Promise<controller> {
       tutorias:
         ' Martes a viernes, 8am a 10 am. Oficina 103 Ed. Pantano de Vargas.',
     },
-    {
-      name: 'Camilo Lesmes Fabián',
-      img: 'http://localhost:3003/cvImg/Camilo_Lesmes_Fabián.png',
-      titulo: 'Ingeniero Agrónomo, Universidad Pedagógica y Tecnológica de Colombia.',
-      url:'http://localhost:3003/cv/Camilo_Lesmes_Fabián.pdf'
-    }
+    
   ];
 
   const promise = new Promise((resolve) => {

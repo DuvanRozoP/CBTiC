@@ -2,7 +2,7 @@
 import { Suspense, lazy } from 'react';
 
 import './LeyDeFaraday.css';
-import { Preload, Stage } from '@react-three/drei';
+import { OrbitControls, Preload, Stage } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 
 const LazyOscilation = lazy(
@@ -26,6 +26,7 @@ function LeyDeFaraday() {
             <LazyOscilation />
             <Preload all />
           </Stage>
+          <OrbitControls/>
         </Canvas>
       </Suspense>
 

@@ -7,22 +7,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
     <title>Document</title>
 </head>
-<body>
+<body style="    width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;">
     <h1>interpretacion geometrica de la derivada:</h1>
     <h3>ecuacion de la curva:</h3>
     <div>
         <input style="width: 300px; height: 50px;font-size: larger; " id="fonse" placeholder="x^2" type="text">
         <button style="width: 100px; height: 50px; font-size: larger;" onclick="actuazarc()">modificar</button>
-        <h1>equacion de la recta tangente:</h1>
+        <h1>ecuacion de la recta tangente:</h1>
         <h1 id="big" ></h1>
     </div>
 
     <div>
-        <canvas id="myChart" width="800" height="800"></canvas>
+        <canvas id="myChart" width="500" height="500"></canvas>
     </div>
 
     <div> 
-        <input style="width: 770px;margin-left: 30px; " id="favian"  type="range" min="0" max="7" step="0.25" >
+        <input style="width: 550px;margin-left: 30px; " onchange="actuazarc()"  id="favian"  type="range" min="0" max="7" step="0.25" >
       <!--    <button style="width: 770px;margin-left: 30px;height: 100px;" onclick="actuazarc()">cambiar</button>
         --> 
     </div>
@@ -349,7 +352,7 @@ return hayx
         si=Number(gorge)
         let punto=si/paso
         let n
-        let fidel=derivada(excusa,punto)+"(x-"+punto+")"+"+"+funcion(excusa,punto)
+        let fidel=derivada(excusa,punto)*derivada(excusa,paso)+"(x-"+punto+")"+"+"+funcion(excusa,punto)*funcion(excusa,paso)
         document.getElementById("big").innerHTML=fidel
         for(n=0;n<=total;n=n+paso){
             if(derivada(excusa,punto)*(n-punto)+funcion(excusa,punto)==funcion(excusa,paso)){
